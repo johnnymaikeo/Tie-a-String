@@ -15,7 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Check if user have seen the welcome message
+        // Redirect to WelcomeViewController if not
+        
+        let defaults = NSUserDefaults.standardUserDefaults();
+        if !defaults.boolForKey("showWelcomeMessage") {
+            var rootView: WelcomeViewController = WelcomeViewController();
+            if let window = self.window {
+                window.rootViewController = rootView;
+            }
+        }
+        
         return true
     }
 
