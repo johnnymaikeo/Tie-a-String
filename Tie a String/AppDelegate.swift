@@ -16,17 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Setting the PageController appearance
+        
+        var pageController = UIPageControl.appearance();
+        pageController.pageIndicatorTintColor = UIColor.lightGrayColor();
+        pageController.currentPageIndicatorTintColor = UIColor.blackColor();
+        pageController.backgroundColor = UIColor.whiteColor();
+        
         // Check if user have seen the welcome message
         // Redirect to WelcomeViewController if not
         
         let defaults = NSUserDefaults.standardUserDefaults();
         if !defaults.boolForKey("showWelcomeMessage") {
-            var rootView: WelcomeViewController = WelcomeViewController();
-            if let window = self.window {
-                window.rootViewController = rootView;
-            }
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var initialViewController = storyboard.instantiateViewControllerWithIdentifier("WelcomeViewController") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
-        
+
         return true
     }
 

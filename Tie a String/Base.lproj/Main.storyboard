@@ -61,7 +61,7 @@
         <!--Select Category-->
         <scene sceneID="Cjb-N3-gJQ">
             <objects>
-                <collectionViewController id="757-jA-sOt" userLabel="Select Category" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SelectCategoryCollectionViewController" id="757-jA-sOt" userLabel="Select Category" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="evj-tu-U7G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
         <!--Add Details-->
         <scene sceneID="tIu-o4-SK5">
             <objects>
-                <viewController id="Hi4-7X-OiS" userLabel="Add Details" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDetailsViewController" id="Hi4-7X-OiS" userLabel="Add Details" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gtq-SE-hNz"/>
                         <viewControllerLayoutGuide type="bottom" id="e0m-k0-txl"/>
@@ -203,18 +203,37 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drq-zZ-dKf">
+                                <rect key="frame" x="16" y="49" width="46" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="l5Y-0s-bxV" kind="show" identifier="SegueLoginToEnter" id="guv-oA-55b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNU-X8-6tX">
+                                <rect key="frame" x="13" y="87" width="46" height="30"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Yub-iZ-9Zh" kind="show" identifier="SegueLoginToJoin" id="veG-U4-YaF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Cnt-3a-ze6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Dz-7L-4rZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="-534"/>
+            <point key="canvasLocation" x="1452" y="-534"/>
         </scene>
         <!--Enter-->
         <scene sceneID="urq-SJ-mdV">
             <objects>
-                <viewController id="l5Y-0s-bxV" userLabel="Enter" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnterViewController" id="l5Y-0s-bxV" userLabel="Enter" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Exh-bH-JRw"/>
                         <viewControllerLayoutGuide type="bottom" id="E7T-3U-5B3"/>
@@ -227,12 +246,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I37-Tf-dub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="-828"/>
+            <point key="canvasLocation" x="2152" y="-828"/>
         </scene>
         <!--Join-->
         <scene sceneID="Dr4-zW-d9R">
             <objects>
-                <viewController id="Yub-iZ-9Zh" userLabel="Join" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinViewController" id="Yub-iZ-9Zh" userLabel="Join" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EMr-aP-Rh7"/>
                         <viewControllerLayoutGuide type="bottom" id="FOa-ke-Res"/>
@@ -245,20 +264,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcv-ue-UCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="-74"/>
-        </scene>
-        <!--Welcome View Controller-->
-        <scene sceneID="vaA-wP-Jbw">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="rAl-mM-1eO" customClass="WelcomeViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S51-qK-woa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2048" y="262"/>
+            <point key="canvasLocation" x="2152" y="-74"/>
         </scene>
         <!--Welcome-->
+        <scene sceneID="ecd-CI-avV">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="SCm-0n-Hih" userLabel="Welcome" customClass="WelcomeViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPb-4C-LSf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xvf-6N-S05"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sl7-ID-oHI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDa-iu-Vfn">
+                                <rect key="frame" x="285" y="550" width="30" height="30"/>
+                                <state key="normal" title="skip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ybp-jg-Kyz" kind="show" identifier="SegueWelcomeToLogin" id="FQh-lG-dnc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HDa-iu-Vfn" secondAttribute="bottom" constant="20" symbolic="YES" id="f5z-18-bf4"/>
+                            <constraint firstItem="HDa-iu-Vfn" firstAttribute="centerX" secondItem="sl7-ID-oHI" secondAttribute="centerX" id="zfu-XA-DfE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="skipButton" destination="HDa-iu-Vfn" id="qpZ-QC-vpp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZD-hg-g22" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="1034"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="4cB-ah-dhs">
+            <objects>
+                <pageViewController storyboardIdentifier="UniquePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="J9O-pg-mWw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l24-Ho-vPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3188" y="1034"/>
+        </scene>
+        <!--Page Content-->
         <scene sceneID="4JP-Lr-e9f">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="r6z-Jc-i9Y" userLabel="Welcome" customClass="PageContentViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="r6z-Jc-i9Y" userLabel="Page Content" customClass="PageContentViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GfY-ya-FFb"/>
                         <viewControllerLayoutGuide type="bottom" id="ECD-R5-1RR"/>
@@ -267,26 +322,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61E-Va-WE5">
-                                <rect key="frame" x="241" y="550" width="118" height="30"/>
-                                <state key="normal" title="skip presentation">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="uBt-1f-MSL" kind="show" identifier="SegueWelcomeToLogin" id="4Te-sd-SKN"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xG3-zp-G0H">
+                                <rect key="frame" x="16" y="20" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ECD-R5-1RR" firstAttribute="top" secondItem="61E-Va-WE5" secondAttribute="bottom" constant="20" id="Iik-Yn-0Mi"/>
-                            <constraint firstAttribute="centerX" secondItem="61E-Va-WE5" secondAttribute="centerX" id="oeW-Yi-YeH"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="xG3-zp-G0H" id="Mjf-Pb-VbJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pT4-98-e2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2732" y="262"/>
+            <point key="canvasLocation" x="3884" y="1034"/>
         </scene>
         <!--Home-->
         <scene sceneID="cGw-IG-gB6">
@@ -363,6 +411,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ek-6I-5zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704" y="1034"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HYs-oN-X1P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ybp-jg-Kyz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DJk-LV-oWL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uBt-1f-MSL" kind="relationship" relationship="rootViewController" id="2xO-HF-MfD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w45-2v-r2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640" y="-534"/>
         </scene>
     </scenes>
 </document>
