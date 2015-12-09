@@ -70,7 +70,8 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController:
+        UIViewController) -> UIViewController? {
     
         var vc = viewController as! PageContentViewController
         var index = vc.pageIndex as Int
@@ -91,11 +92,15 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    
         return self.pageImages.count
+    
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    
         return 0
+    
     }
     
     func setButtonText(index: Int) {

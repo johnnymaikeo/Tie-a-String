@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF64F5A11C17C23600766ECF /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A01C17C23600766ECF /* EnterViewController.swift */; };
+		EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A21C17C25600766ECF /* JoinViewController.swift */; };
+		EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A41C17C26F00766ECF /* LoginViewController.swift */; };
+		EF64F5A71C17C75B00766ECF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A61C17C75B00766ECF /* Constants.swift */; };
+		EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */; };
 		EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */; };
 		EF7719C11C167432006D0AC5 /* img.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7719C01C167432006D0AC5 /* img.JPG */; };
 		EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2A11C1510E700E0B7A4 /* AppDelegate.swift */; };
@@ -28,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF64F5A01C17C23600766ECF /* EnterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
+		EF64F5A21C17C25600766ECF /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		EF64F5A41C17C26F00766ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EF64F5A61C17C75B00766ECF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EF7719C01C167432006D0AC5 /* img.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.JPG; sourceTree = "<group>"; };
 		EFD9C29C1C1510E700E0B7A4 /* Tie a String.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie a String.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7719C01C167432006D0AC5 /* img.JPG */,
+				EF64F5A61C17C75B00766ECF /* Constants.swift */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -130,6 +141,10 @@
 			children = (
 				EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */,
 				EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */,
+				EF64F5A01C17C23600766ECF /* EnterViewController.swift */,
+				EF64F5A21C17C25600766ECF /* JoinViewController.swift */,
+				EF64F5A41C17C26F00766ECF /* LoginViewController.swift */,
+				EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -236,8 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */,
 				EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */,
+				EF64F5A11C17C23600766ECF /* EnterViewController.swift in Sources */,
 				EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */,
+				EF64F5A71C17C75B00766ECF /* Constants.swift in Sources */,
+				EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */,
+				EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */,
 				EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
