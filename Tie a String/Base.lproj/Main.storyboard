@@ -7,7 +7,7 @@
         <!--Not Expired-->
         <scene sceneID="yRx-zx-A9k">
             <objects>
-                <tableViewController title="Not Expired" id="BdF-7t-sdm" userLabel="Not Expired" sceneMemberID="viewController">
+                <tableViewController title="Not Expired" id="BdF-7t-sdm" userLabel="Not Expired" customClass="NotExpiredTableViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="As9-1d-ltU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +26,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Not Expired" id="VtE-6p-SXu"/>
+                    <connections>
+                        <segue destination="757-jA-sOt" kind="show" identifier="SegueNotExpiredToSelectCaregory" id="ahR-qd-jer"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-4F-rkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,7 +37,7 @@
         <!--Expired-->
         <scene sceneID="uUw-T7-lkn">
             <objects>
-                <tableViewController title="Expired" id="zGr-Ca-amO" userLabel="Expired" sceneMemberID="viewController">
+                <tableViewController title="Expired" id="zGr-Ca-amO" userLabel="Expired" customClass="ExpiredTableViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PC1-1a-bYG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +56,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Expired" id="30L-wY-vyE"/>
+                    <connections>
+                        <segue destination="757-jA-sOt" kind="show" identifier="SegueExpiredToSelectCaregory" id="9s5-kF-uNz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Cy-Co-Wsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +67,7 @@
         <!--Select Category-->
         <scene sceneID="Cjb-N3-gJQ">
             <objects>
-                <collectionViewController storyboardIdentifier="SelectCategoryCollectionViewController" id="757-jA-sOt" userLabel="Select Category" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SelectCategoryCollectionViewController" id="757-jA-sOt" userLabel="Select Category" customClass="SelectCategoryCollectionViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="evj-tu-U7G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +101,7 @@
         <!--Add Details-->
         <scene sceneID="tIu-o4-SK5">
             <objects>
-                <viewController storyboardIdentifier="AddDetailsViewController" id="Hi4-7X-OiS" userLabel="Add Details" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDetailsViewController" id="Hi4-7X-OiS" userLabel="Add Details" customClass="AddDetailsViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gtq-SE-hNz"/>
                         <viewControllerLayoutGuide type="bottom" id="e0m-k0-txl"/>
@@ -487,5 +493,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Qbr-x3-Cds"/>
+        <segue reference="9s5-kF-uNz"/>
     </inferredMetricsTieBreakers>
 </document>

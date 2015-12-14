@@ -15,5 +15,9 @@ struct Constants {
         
         static let FromEnterToHome = "SegueEnterToHome"
         
+        static let FromNotExpiredToSelectCategory = "SegueNotExpiredToSelectCaregory"
+        
+        static let FromExpiredToSelectCategory = "SegueExpiredToSelectCaregory"
+        
     }
 }

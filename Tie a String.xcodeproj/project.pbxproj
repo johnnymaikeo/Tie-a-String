@@ -20,6 +20,13 @@
 		EFD9C2AE1C1510E700E0B7A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFD9C2AC1C1510E700E0B7A4 /* LaunchScreen.xib */; };
 		EFD9C2BA1C1510E700E0B7A4 /* Tie_a_StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2B91C1510E700E0B7A4 /* Tie_a_StringTests.swift */; };
 		EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */; };
+		EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3261C1E4CAF00A6C942 /* NotExpiredTableViewController.swift */; };
+		EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */; };
+		EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */; };
+		EFF3A32F1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A32E1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift */; };
+		EFF3A3331C1E599900A6C942 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */; };
+		EFF3A3351C1E5BFD00A6C942 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3341C1E5BFD00A6C942 /* DataController.swift */; };
+		EFF3A3381C1E601100A6C942 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3371C1E601100A6C942 /* Categories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,13 @@
 		EFD9C2B81C1510E700E0B7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD9C2B91C1510E700E0B7A4 /* Tie_a_StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tie_a_StringTests.swift; sourceTree = "<group>"; };
 		EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		EFF3A3261C1E4CAF00A6C942 /* NotExpiredTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotExpiredTableViewController.swift; sourceTree = "<group>"; };
+		EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTableViewController.swift; sourceTree = "<group>"; };
+		EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewController.swift; sourceTree = "<group>"; };
+		EFF3A32E1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		EFF3A3341C1E5BFD00A6C942 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		EFF3A3371C1E601100A6C942 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +114,8 @@
 		EFD9C29E1C1510E700E0B7A4 /* Tie a String */ = {
 			isa = PBXGroup;
 			children = (
+				EFF3A3361C1E5FFF00A6C942 /* Model */,
+				EFF3A3301C1E596000A6C942 /* Data */,
 				EF7719BF1C167412006D0AC5 /* Assets */,
 				EFD9C2C31C151E7500E0B7A4 /* Controller */,
 				EFD9C2A11C1510E700E0B7A4 /* AppDelegate.swift */,
@@ -139,14 +155,35 @@
 		EFD9C2C31C151E7500E0B7A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */,
-				EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */,
+				EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */,
 				EF64F5A01C17C23600766ECF /* EnterViewController.swift */,
+				EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */,
+				EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */,
 				EF64F5A21C17C25600766ECF /* JoinViewController.swift */,
 				EF64F5A41C17C26F00766ECF /* LoginViewController.swift */,
-				EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */,
+				EFF3A3261C1E4CAF00A6C942 /* NotExpiredTableViewController.swift */,
+				EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */,
+				EFF3A32E1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift */,
+				EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		EFF3A3301C1E596000A6C942 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */,
+				EFF3A3341C1E5BFD00A6C942 /* DataController.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		EFF3A3361C1E5FFF00A6C942 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFF3A3371C1E601100A6C942 /* Categories.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,12 +289,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */,
+				EFF3A3351C1E5BFD00A6C942 /* DataController.swift in Sources */,
+				EFF3A3381C1E601100A6C942 /* Categories.swift in Sources */,
+				EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */,
 				EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */,
+				EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */,
+				EFF3A32F1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift in Sources */,
 				EF64F5A11C17C23600766ECF /* EnterViewController.swift in Sources */,
 				EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */,
 				EF64F5A71C17C75B00766ECF /* Constants.swift in Sources */,
 				EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */,
 				EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */,
+				EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */,
+				EFF3A3331C1E599900A6C942 /* Model.xcdatamodeld in Sources */,
 				EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +512,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */,
+			);
+			currentVersion = EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EFD9C2941C1510E700E0B7A4 /* Project object */;
 }
