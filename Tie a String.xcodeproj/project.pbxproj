@@ -24,9 +24,10 @@
 		EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */; };
 		EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */; };
 		EFF3A32F1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A32E1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift */; };
-		EFF3A3331C1E599900A6C942 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */; };
-		EFF3A3351C1E5BFD00A6C942 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3341C1E5BFD00A6C942 /* DataController.swift */; };
-		EFF3A3381C1E601100A6C942 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3371C1E601100A6C942 /* Categories.swift */; };
+		EFF80E9B1C1FB7D000CE7D4E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF80E9A1C1FB7D000CE7D4E /* DataController.swift */; };
+		EFF80E9E1C1FC2C200CE7D4E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFF80E9C1C1FC2C200CE7D4E /* DataModel.xcdatamodeld */; };
+		EFF80EA11C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF80E9F1C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift */; };
+		EFF80EA21C1FC2F900CE7D4E /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF80EA01C1FC2F900CE7D4E /* Categories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +62,10 @@
 		EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTableViewController.swift; sourceTree = "<group>"; };
 		EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewController.swift; sourceTree = "<group>"; };
 		EFF3A32E1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoryCollectionViewController.swift; sourceTree = "<group>"; };
-		EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		EFF3A3341C1E5BFD00A6C942 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		EFF3A3371C1E601100A6C942 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		EFF80E9A1C1FB7D000CE7D4E /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		EFF80E9D1C1FC2C200CE7D4E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		EFF80E9F1C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Categories+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EFF80EA01C1FC2F900CE7D4E /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +174,8 @@
 		EFF3A3301C1E596000A6C942 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */,
-				EFF3A3341C1E5BFD00A6C942 /* DataController.swift */,
+				EFF80E9A1C1FB7D000CE7D4E /* DataController.swift */,
+				EFF80E9C1C1FC2C200CE7D4E /* DataModel.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -181,7 +183,8 @@
 		EFF3A3361C1E5FFF00A6C942 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EFF3A3371C1E601100A6C942 /* Categories.swift */,
+				EFF80E9F1C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift */,
+				EFF80EA01C1FC2F900CE7D4E /* Categories.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -230,6 +233,8 @@
 		EFD9C2941C1510E700E0B7A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Johnny Ferreira Corp";
 				TargetAttributes = {
@@ -289,11 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */,
-				EFF3A3351C1E5BFD00A6C942 /* DataController.swift in Sources */,
-				EFF3A3381C1E601100A6C942 /* Categories.swift in Sources */,
+				EFF80E9B1C1FB7D000CE7D4E /* DataController.swift in Sources */,
 				EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */,
+				EFF80EA21C1FC2F900CE7D4E /* Categories.swift in Sources */,
 				EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */,
 				EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */,
+				EFF80E9E1C1FC2C200CE7D4E /* DataModel.xcdatamodeld in Sources */,
+				EFF80EA11C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift in Sources */,
 				EFF3A32F1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift in Sources */,
 				EF64F5A11C17C23600766ECF /* EnterViewController.swift in Sources */,
 				EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */,
@@ -301,7 +308,6 @@
 				EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */,
 				EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */,
 				EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */,
-				EFF3A3331C1E599900A6C942 /* Model.xcdatamodeld in Sources */,
 				EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,13 +520,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EFF3A3311C1E599900A6C942 /* Model.xcdatamodeld */ = {
+		EFF80E9C1C1FC2C200CE7D4E /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */,
+				EFF80E9D1C1FC2C200CE7D4E /* DataModel.xcdatamodel */,
 			);
-			currentVersion = EFF3A3321C1E599900A6C942 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = EFF80E9D1C1FC2C200CE7D4E /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -22,10 +22,10 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("UniquePageViewController") as! UIPageViewController
         
         self.pageViewController.dataSource = self;
-        var startVC = self.viewControllerAtIndex(0) as PageContentViewController
-        var viewControllers = NSArray(object: startVC)
+        let startVC = self.viewControllerAtIndex(0) as PageContentViewController
+        let viewControllers = NSArray(object: startVC)
         
-        self.pageViewController.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: true, completion: nil)
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.height - 100)
         
         self.addChildViewController(self.pageViewController)
@@ -44,7 +44,7 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
             return PageContentViewController();
         }
         
-        var vc: PageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! PageContentViewController
+        let vc: PageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! PageContentViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.pageIndex = index
@@ -57,7 +57,7 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
-        var vc = viewController as! PageContentViewController
+        let vc = viewController as! PageContentViewController
         var index = vc.pageIndex as Int
         
         if ((index == 0) || (index == NSNotFound)) {
@@ -73,7 +73,7 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController:
         UIViewController) -> UIViewController? {
     
-        var vc = viewController as! PageContentViewController
+        let vc = viewController as! PageContentViewController
         var index = vc.pageIndex as Int
         
         if (index == NSNotFound) {
