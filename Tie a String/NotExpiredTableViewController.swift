@@ -27,5 +27,15 @@ class NotExpiredTableViewController: UITableViewController {
         self.performSegueWithIdentifier(Constants.Segues.FromNotExpiredToSelectCategory, sender: self)
     
     }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
+    if segue.identifier == Constants.Segues.FromNotExpiredToSelectCategory {
+      
+      let viewController = segue.destinationViewController as! SelectCategoryCollectionViewController
+      
+      viewController.segueToReturn = Constants.Segues.FromAddDetailsToNotExpired
+      
+    }
+  }
 }

@@ -27,5 +27,17 @@ class ExpiredTableViewController: UITableViewController {
         self.performSegueWithIdentifier(Constants.Segues.FromExpiredToSelectCategory, sender: self)
         
     }
+  
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    if segue.identifier == Constants.Segues.FromExpiredToSelectCategory {
+        
+      let viewController = segue.destinationViewController as! SelectCategoryCollectionViewController
+        
+      viewController.segueToReturn = Constants.Segues.FromAddDetailsToExpired
+      
+    }
+  }
     
 }

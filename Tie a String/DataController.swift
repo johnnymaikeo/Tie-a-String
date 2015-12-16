@@ -29,22 +29,19 @@ class DataController: NSObject {
         
         let categories = ["Alimentos", "Automóvel", "Residência", "Financeiro", "Saúde", "Documentos"];
         
-        let moc = self.appDelegate.managedObjectContext
-        
         var index: Int
         for (index = 0; index < categories.count; index++) {
             
             let entity = NSEntityDescription.insertNewObjectForEntityForName("Categories", inManagedObjectContext: self.managedContext) as! Categories
             
-            entity.setValue(0, forKey: "id")
-            entity.setValue("Alimentos", forKey: "name")
+            entity.setValue(index, forKey: "id")
+            entity.setValue(categories[index], forKey: "name")
             
-        }
-        
-        do {
-            try moc.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
+            do {
+                try self.managedContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
         }
         
     }
@@ -88,6 +85,53 @@ class DataController: NSObject {
         
         return []
         
+    }
+    
+    func isExpired(date: NSDate) -> Bool {
+        
+        let currentDate = NSDate()
+        
+        if currentDate.compare(date) == NSComparisonResult.OrderedDescending {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+    
+    func idForReminder() -> Int {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        do {
+            
+            let results = try self.managedContext.executeFetchRequest(fetchRequest)
+            return results.count
+            
+        } catch {
+            fatalError("Failure to fech \(error)")
+        }
+    
+    }
+    
+    func addReminder(reminder: Reminders) -> Bool {
+    
+        let entity = NSEntityDescription.insertNewObjectForEntityForName("Reminders", inManagedObjectContext: self.managedContext) as! Reminders
+        
+        entity.setValue(reminder.alert, forKey: "alert")
+        entity.setValue(reminder.category, forKey: "category")
+        entity.setValue(reminder.expiration, forKey: "expiration")
+        entity.setValue(self.isExpired(reminder.expiration!), forKey: "expired")
+        entity.setValue(self.idForReminder(), forKey: "id")
+        entity.setValue(reminder.reminder, forKey: "reminder")
+        
+        do {
+            try self.managedContext.save()
+            return true;
+        } catch {
+            return false;
+        }
+    
     }
     
 }

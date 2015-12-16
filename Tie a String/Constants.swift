@@ -9,15 +9,30 @@
 import Foundation
 
 struct Constants {
-    struct Segues {
+  struct Segues {
         
-        static let FromJoinToHome = "SegueJoinToHome"
+    static let FromJoinToHome = "SegueJoinToHome"
         
-        static let FromEnterToHome = "SegueEnterToHome"
+    static let FromEnterToHome = "SegueEnterToHome"
         
-        static let FromNotExpiredToSelectCategory = "SegueNotExpiredToSelectCaregory"
+    static let FromNotExpiredToSelectCategory = "SegueNotExpiredToSelectCaregory"
         
-        static let FromExpiredToSelectCategory = "SegueExpiredToSelectCaregory"
+    static let FromExpiredToSelectCategory = "SegueExpiredToSelectCaregory"
+      
+    static let FromSelectCategoryToAddDetails = "SegueSelectCategoryToAddDetails"
+      
+    static let FromAddDetailsToNotExpired = "SegueAddDetailsToNotExpired"
+      
+    static let FromAddDetailsToExpired = "SegueAddDetailsToExpired"
+    
+    static let FromAddDetailsToTabBar = "SegueAddDetailsToTabBarController"
         
-    }
+  }
+  
+
+  struct Identifiers {
+    
+    static let CategorySelectionCell = "CategorySelectionCollectionViewCell"
+    
+  }
 }
