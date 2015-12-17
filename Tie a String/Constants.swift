@@ -26,6 +26,10 @@ struct Constants {
     static let FromAddDetailsToExpired = "SegueAddDetailsToExpired"
     
     static let FromAddDetailsToTabBar = "SegueAddDetailsToTabBarController"
+    
+    static let FromNonExpiredToAddDetails = "SegueNonExpiredToAddDetails"
+    
+    static let FromExpiredToAddDetails = "SegueExpiredToAddDetails"
         
   }
   

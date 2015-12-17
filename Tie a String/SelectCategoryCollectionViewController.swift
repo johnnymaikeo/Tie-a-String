@@ -60,10 +60,10 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
     
     if segue.identifier == Constants.Segues.FromSelectCategoryToAddDetails {
       
-      if selectedIndexRow > 0 {
+      if selectedIndexRow >= 0 {
       
         let viewController = segue.destinationViewController as! AddDetailsViewController
-        let category = categories[self.selectedIndexRow]
+        let category = self.categories[self.selectedIndexRow]
         
         viewController.categoryIndex = Int(category.id!)
         viewController.category = category.name!

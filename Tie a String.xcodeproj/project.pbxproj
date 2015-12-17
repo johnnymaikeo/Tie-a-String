@@ -14,10 +14,10 @@
 		EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */; };
 		EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */; };
 		EF7719C11C167432006D0AC5 /* img.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EF7719C01C167432006D0AC5 /* img.JPG */; };
+		EF833B7B1C22696000735786 /* Reminders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF833B791C22696000735786 /* Reminders+CoreDataProperties.swift */; };
+		EF833B7C1C22696000735786 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF833B7A1C22696000735786 /* Reminders.swift */; };
 		EFB032681C20E8210005E860 /* CategorySelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB032671C20E8210005E860 /* CategorySelectionCollectionViewCell.xib */; };
 		EFB0326A1C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB032691C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift */; };
-		EFB032711C2108660005E860 /* Reminders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0326F1C2108660005E860 /* Reminders+CoreDataProperties.swift */; };
-		EFB032721C2108660005E860 /* Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB032701C2108660005E860 /* Reminders.swift */; };
 		EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2A11C1510E700E0B7A4 /* AppDelegate.swift */; };
 		EFD9C2A91C1510E700E0B7A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFD9C2A71C1510E700E0B7A4 /* Main.storyboard */; };
 		EFD9C2AB1C1510E700E0B7A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD9C2AA1C1510E700E0B7A4 /* Images.xcassets */; };
@@ -52,10 +52,10 @@
 		EF64F5A81C17C97400766ECF /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		EF7719BD1C166F2B006D0AC5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EF7719C01C167432006D0AC5 /* img.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.JPG; sourceTree = "<group>"; };
+		EF833B791C22696000735786 /* Reminders+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF833B7A1C22696000735786 /* Reminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		EFB032671C20E8210005E860 /* CategorySelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategorySelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		EFB032691C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		EFB0326F1C2108660005E860 /* Reminders+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminders+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		EFB032701C2108660005E860 /* Reminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminders.swift; sourceTree = "<group>"; };
 		EFD9C29C1C1510E700E0B7A4 /* Tie a String.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tie a String.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD9C2A01C1510E700E0B7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD9C2A11C1510E700E0B7A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 			children = (
 				EFF80E9F1C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift */,
 				EFF80EA01C1FC2F900CE7D4E /* Categories.swift */,
-				EFB0326F1C2108660005E860 /* Reminders+CoreDataProperties.swift */,
-				EFB032701C2108660005E860 /* Reminders.swift */,
+				EF833B791C22696000735786 /* Reminders+CoreDataProperties.swift */,
+				EF833B7A1C22696000735786 /* Reminders.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFB032721C2108660005E860 /* Reminders.swift in Sources */,
+				EF833B7C1C22696000735786 /* Reminders.swift in Sources */,
 				EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */,
 				EFF80E9B1C1FB7D000CE7D4E /* DataController.swift in Sources */,
 				EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */,
@@ -332,7 +332,7 @@
 				EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */,
 				EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */,
 				EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */,
-				EFB032711C2108660005E860 /* Reminders+CoreDataProperties.swift in Sources */,
+				EF833B7B1C22696000735786 /* Reminders+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

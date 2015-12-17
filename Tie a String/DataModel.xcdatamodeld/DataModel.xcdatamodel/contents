@@ -4,7 +4,8 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Reminders" representedClassName="Reminders" syncable="YES">
+    <entity name="Reminders" representedClassName=".Reminders" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="alert" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="expiration" optional="YES" attributeType="Date" syncable="YES"/>
@@ -14,6 +15,6 @@
     </entity>
     <elements>
         <element name="Categories" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Reminders" positionX="-63" positionY="0" width="128" height="135"/>
+        <element name="Reminders" positionX="-63" positionY="0" width="128" height="150"/>
     </elements>
 </model>

@@ -15,15 +15,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HCu-ee-hFQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NonExpiredCell" id="Jix-YL-sdt">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HCu-ee-hFQ" id="ZFq-xX-oLM">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jix-YL-sdt" id="Adw-fj-njQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="BdF-7t-sdm" id="bTm-Sh-1oO"/>
                             <outlet property="delegate" destination="BdF-7t-sdm" id="Ijl-A1-lUz"/>
@@ -32,6 +33,7 @@
                     <navigationItem key="navigationItem" title="Not Expired" id="VtE-6p-SXu"/>
                     <connections>
                         <segue destination="757-jA-sOt" kind="show" identifier="SegueNotExpiredToSelectCaregory" id="ahR-qd-jer"/>
+                        <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueExpiredToAddDetails" id="myk-lF-OmH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-4F-rkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cLO-e9-5Uh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpiredCell" id="cLO-e9-5Uh">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLO-e9-5Uh" id="Ij6-5h-ae2">
@@ -64,6 +66,7 @@
                     <navigationItem key="navigationItem" title="Expired" id="30L-wY-vyE"/>
                     <connections>
                         <segue destination="757-jA-sOt" kind="show" identifier="SegueExpiredToSelectCaregory" id="9s5-kF-uNz"/>
+                        <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueExpiredToAddDetails" id="pW3-Ud-GVa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Cy-Co-Wsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -548,6 +551,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="e8G-wX-X67"/>
+        <segue reference="pW3-Ud-GVa"/>
         <segue reference="ahR-qd-jer"/>
     </inferredMetricsTieBreakers>
 </document>

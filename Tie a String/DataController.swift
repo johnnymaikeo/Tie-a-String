@@ -27,7 +27,7 @@ class DataController: NSObject {
             return
         }
         
-        let categories = ["Alimentos", "Automóvel", "Residência", "Financeiro", "Saúde", "Documentos"];
+        let categories = ["Alimentos", "Automóvel", "Documentos", "Financeiro", "Residência", "Saúde"];
         
         var index: Int
         for (index = 0; index < categories.count; index++) {
@@ -46,7 +46,7 @@ class DataController: NSObject {
         
     }
     
-    func hasCategories() -> Bool {
+    internal func hasCategories() -> Bool {
         
         let fetchRequest = NSFetchRequest(entityName: "Categories")
         
@@ -87,19 +87,21 @@ class DataController: NSObject {
         
     }
     
-    func isExpired(date: NSDate) -> Bool {
+    internal func isExpired(date: NSDate) -> Bool {
         
         let currentDate = NSDate()
         
         if currentDate.compare(date) == NSComparisonResult.OrderedDescending {
+            NSLog("is expired")
             return true;
         } else {
+            NSLog("is not expired")
             return false;
         }
         
     }
     
-    func idForReminder() -> Int {
+    internal func idForReminder() -> Int {
     
         let fetchRequest = NSFetchRequest(entityName: "Reminders")
         
@@ -114,16 +116,17 @@ class DataController: NSObject {
     
     }
     
-    func addReminder(reminder: Reminders) -> Bool {
+    func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String) -> Bool {
     
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Reminders", inManagedObjectContext: self.managedContext) as! Reminders
         
-        entity.setValue(reminder.alert, forKey: "alert")
-        entity.setValue(reminder.category, forKey: "category")
-        entity.setValue(reminder.expiration, forKey: "expiration")
-        entity.setValue(self.isExpired(reminder.expiration!), forKey: "expired")
+        entity.setValue(alert, forKey: "alert")
+        entity.setValue(category, forKey: "category")
+        entity.setValue(expiration, forKey: "expiration")
+        entity.setValue(self.isExpired(expiration), forKey: "expired")
         entity.setValue(self.idForReminder(), forKey: "id")
-        entity.setValue(reminder.reminder, forKey: "reminder")
+        entity.setValue(reminder, forKey: "reminder")
+        entity.setValue(true, forKey: "active")
         
         do {
             try self.managedContext.save()
@@ -132,6 +135,173 @@ class DataController: NSObject {
             return false;
         }
     
+    }
+    
+    internal func fetchRemindersToSetAsExpired() -> [Reminders] {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // Check for non flagged reminders
+        
+        let predicateExpired = NSPredicate(format: "expired == false")
+        
+        // With expiration date before today
+        
+        let date = NSDate()
+        let yesterday = date.dateByAddingTimeInterval(-60*60*24)
+        
+        let predicateExpiration = NSPredicate(format: "expiration <= %@", yesterday)
+        
+        let compound = NSCompoundPredicate(type: .AndPredicateType, subpredicates: [predicateExpired, predicateExpiration])
+        
+        fetchRequest.predicate = compound
+        
+        do {
+        
+            let results = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            return results
+            
+        } catch {
+            
+            fatalError("Failure to fetch: \(error)")
+            
+        }
+        
+        return []
+        
+    }
+    
+    internal func setExpiredReminders () {
+    
+        let reminders = self.fetchRemindersToSetAsExpired()
+        
+        for reminder in reminders {
+        
+            reminder.setValue(true, forKey: "expired")
+
+            do {
+                
+                try self.managedContext.save()
+            
+            } catch {
+            
+                fatalError("Failure to save: \(error)")
+            
+            }
+        
+        }
+        
+    }
+    
+    func fetchNonExpiredReminders() -> [Reminders] {
+        
+        self.setExpiredReminders()
+        
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // filter non expired reminders
+        
+        let predicate = NSPredicate(format: "expired == false")
+        
+        fetchRequest.predicate = predicate
+        
+        // sort results by expiration date
+        
+        let sortDescriptor = NSSortDescriptor(key: "expiration", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+            
+            let results = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            return results
+            
+        } catch {
+            fatalError("Failure to fetch: \(error)")
+        }
+        
+        return []
+        
+    }
+    
+    func fetchExpiredReminders() -> [Reminders] {
+    
+        self.setExpiredReminders()
+        
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // filter expired requests
+        
+        let predicate = NSPredicate(format: "expired == true")
+        
+        fetchRequest.predicate = predicate
+        
+        // sort results by expiration date
+        
+        let sortDescriptor = NSSortDescriptor(key: "expiration", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+        
+            let results = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            return results
+        
+        } catch {
+        
+            fatalError("Failure to fetch: \(error)")
+        
+        }
+        
+        return []
+        
+    }
+    
+    func edtReminder(id: Int, alert: Bool, expiration: NSDate, reminder: String, completed: Bool) -> Bool {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // filter for specific id
+        
+        let predicate = NSPredicate(format: "id == %d", id)
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+        
+            let reminders = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            
+            for item in reminders {
+            
+                item.setValue(expiration, forKey: "expiration")
+                item.setValue(reminder, forKey: "reminder")
+                item.setValue(alert, forKey: "alert")
+                item.setValue(completed, forKey: "active")
+                
+                do {
+                    
+                    try self.managedContext.save()
+                    
+                    return true;
+                    
+                } catch {
+                    
+                    fatalError("Failure to save: \(error)")
+                    
+                }
+            
+            
+            }
+        
+        } catch {
+        
+            fatalError("Failure to fetch: \(error)")
+        
+        }
+        
+        return true
     }
     
 }
