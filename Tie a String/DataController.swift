@@ -116,7 +116,7 @@ class DataController: NSObject {
     
     }
     
-    func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String) -> Bool {
+    func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String, active: Bool) -> Bool {
     
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Reminders", inManagedObjectContext: self.managedContext) as! Reminders
         
@@ -126,7 +126,7 @@ class DataController: NSObject {
         entity.setValue(self.isExpired(expiration), forKey: "expired")
         entity.setValue(self.idForReminder(), forKey: "id")
         entity.setValue(reminder, forKey: "reminder")
-        entity.setValue(true, forKey: "active")
+        entity.setValue(active, forKey: "active")
         
         do {
             try self.managedContext.save()
@@ -301,7 +301,49 @@ class DataController: NSObject {
         
         }
         
-        return true
+        return false
+    }
+    
+    func deleteReminder(id: Int) -> Bool {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // filter for specific id
+        
+        let predict = NSPredicate(format: "id == %d", id)
+        
+        fetchRequest.predicate = predict
+        
+        do {
+        
+            let reminders = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            
+            for item in reminders {
+                NSLog("%@", item.reminder!)
+                self.managedContext.deleteObject(item)
+                
+                do {
+                
+                    try self.managedContext.save()
+                    
+                    return true;
+                    
+                } catch {
+                
+                    fatalError("Failure to save: \(error)")
+                
+                }
+                
+            }
+        
+        } catch {
+        
+            fatalError("Failure to fetch: \(error)")
+        
+        }
+        
+        return false
+    
     }
     
 }

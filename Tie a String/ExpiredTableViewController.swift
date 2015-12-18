@@ -28,13 +28,19 @@ class ExpiredTableViewController: UITableViewController {
         
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addButton_TouchUpInside");
     
+    self.getData()
+    
+  }
+  
+  internal func getData () {
+    
     self.reminders = self.dataController.fetchExpiredReminders()
     self.convertReminderArrayToMatrix()
     
     // refresh table view data
     
     self.tableView.reloadData()
-    
+  
   }
   
   internal func convertReminderArrayToMatrix() {
@@ -140,10 +146,7 @@ class ExpiredTableViewController: UITableViewController {
       
       if self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true) {
         
-        // TODO: refresh data and reload table source
-        
-        
-        self.tableView.reloadData()
+        self.getData()
         
       } else {
         // Show alert on error
@@ -160,7 +163,20 @@ class ExpiredTableViewController: UITableViewController {
     edit.backgroundColor = UIColor.blueColor()
     
     let delete = UITableViewRowAction(style: .Normal, title: "Remover") { action, index in
-      NSLog("share button tapped")
+      
+      let item = self.reminderMatrix[indexPath.section][indexPath.row] as! Reminders
+      let index = Int(item.id!)
+      
+      if self.dataController.deleteReminder(index) {
+      
+        self.getData()
+        
+      } else {
+      
+        // Show alert on error
+        
+      }
+      
     }
     delete.backgroundColor = UIColor.redColor()
     

@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Not Expired" id="VtE-6p-SXu"/>
                     <connections>
                         <segue destination="757-jA-sOt" kind="show" identifier="SegueNotExpiredToSelectCaregory" id="ahR-qd-jer"/>
-                        <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueExpiredToAddDetails" id="myk-lF-OmH"/>
+                        <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueNotExpiredToAddDetails" id="myk-lF-OmH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-4F-rkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,10 +150,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-qe-vnM">
-                                <rect key="frame" x="20" y="248" width="97" height="30"/>
+                                <rect key="frame" x="156" y="219" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Active:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn2-mP-YPj">
+                                <rect key="frame" x="20" y="259" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-u8-nm0">
+                                <rect key="frame" x="101" y="254" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -163,6 +172,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activeSwitch" destination="cOg-u8-nm0" id="n1i-c9-omf"/>
                         <outlet property="alertMeSwitch" destination="hvu-Cs-evI" id="RFs-5M-v8Z"/>
                         <outlet property="descriptionLabel" destination="GL2-o1-ZhL" id="eqV-1h-f1x"/>
                         <outlet property="expirationDateLabel" destination="SFR-qe-vnM" id="Qhc-6T-5mX"/>

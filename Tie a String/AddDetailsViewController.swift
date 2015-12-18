@@ -21,8 +21,8 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var descriptionLabel: UITextField!
   @IBOutlet weak var expirationDateLabel: UITextField!
   @IBOutlet weak var alertMeSwitch: UISwitch!
+  @IBOutlet weak var activeSwitch: UISwitch!
   @IBOutlet weak var expirationDatePicker: UIDatePicker!
-  
   
   override func viewDidLoad() {
     
@@ -39,7 +39,9 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
       self.expirationDatePicker.date = reminder.expiration!
       
       let alert = reminder.alert == 1 ? true : false
+      let active = reminder.active == 1 ? true : false
       self.alertMeSwitch.setOn(alert, animated: true)
+      self.activeSwitch.setOn(active, animated: true)
     
     } else {
     
@@ -76,10 +78,10 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     let reminder = self.descriptionLabel.text
     let expiration = self.expirationDatePicker.date
     let alert = self.alertMeSwitch.on
-    let completed = false // connect IBOutlet
     let id = Int(self.reminder.id!)
+    let active = self.activeSwitch.on
     
-    if self.dataController.edtReminder(id, alert: alert, expiration: expiration, reminder: reminder!, completed: completed) {
+    if self.dataController.edtReminder(id, alert: alert, expiration: expiration, reminder: reminder!, completed: active) {
       self.performSegueWithIdentifier(Constants.Segues.FromAddDetailsToTabBar, sender: self)
     } else {
       // Show alert on error
@@ -92,8 +94,9 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     let reminder = self.descriptionLabel.text
     let expiration = self.expirationDatePicker.date
     let alert = self.alertMeSwitch.on
+    let active = self.activeSwitch.on
     
-    if self.dataController.addReminder(alert, category: self.categoryIndex, expiration: expiration, reminder: reminder!) {
+    if self.dataController.addReminder(alert, category: self.categoryIndex, expiration: expiration, reminder: reminder!, active: active) {
       self.performSegueWithIdentifier(Constants.Segues.FromAddDetailsToTabBar, sender: self)
     } else {
       // Show alert on error
