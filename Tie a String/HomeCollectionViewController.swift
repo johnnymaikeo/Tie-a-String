@@ -10,23 +10,29 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController {
 
-    override func viewDidLoad() {
+  var tabToReturn: String!
+  
+  override func viewDidLoad() {
         
-      super.viewDidLoad()
+    super.viewDidLoad()
         
-    }
+  }
     
     
-    override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool) {
     
-      // show tab bar
+    // show tab bar
       
-      self.tabBarController?.tabBar.hidden = false
+    self.tabBarController?.tabBar.hidden = false
       
-      // Hide back button from the home screen
+    // Hide back button from the home screen
     
-      self.navigationItem.setHidesBackButton(true, animated: true)
-   
+    self.navigationItem.setHidesBackButton(true, animated: true)
+      
+    // Navigate
+    if (tabToReturn != nil) {
+      NSLog("segueToReturn: %@", self.tabToReturn)
     }
+  }
     
 }

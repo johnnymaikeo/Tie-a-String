@@ -13,7 +13,7 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
 
   var categoryIndex: Int = -1
   var category: String = ""
-  var segueToReturn: String = ""
+  var segueToReturn: String!
   var action: String = ""
   var reminder: Reminders!
   var dataController = DataController()
@@ -134,6 +134,36 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
     
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // Hide back button
+    
+    self.navigationItem.setHidesBackButton(true, animated:true)
+    
+    // Hide navigation bar before returning to tab controller
+    
+    self.navigationController?.navigationBarHidden = true
+    
+    if segue.identifier == Constants.Segues.FromAddDetailsToTabBar {
+      
+      let tabBarController = segue.destinationViewController as! UITabBarController
+      
+      if self.segueToReturn == Constants.Segues.FromAddDetailsToNotExpired {
+      
+        let navigationController = tabBarController.viewControllers?[1] as! UINavigationController
+        _ = navigationController.viewControllers[0] as! NotExpiredTableViewController
+        
+      } else {
+      
+        let navigationController = tabBarController.viewControllers?[2] as! UINavigationController
+        _ = navigationController.viewControllers[0] as! ExpiredTableViewController
+      
+      }
+      
+    }
+    
+  }
+
   func expirationDatePiker_Changed(datePicker:UIDatePicker) {
     let dateFormatter = NSDateFormatter()
     

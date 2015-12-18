@@ -9,6 +9,7 @@
 import Foundation
 
 struct Constants {
+  
   struct Segues {
         
     static let FromJoinToHome = "SegueJoinToHome"
@@ -30,13 +31,17 @@ struct Constants {
     static let FromNotExpiredToAddDetails = "SegueNotExpiredToAddDetails"
     
     static let FromExpiredToAddDetails = "SegueExpiredToAddDetails"
+    
+    static let FromSearchToResults = "SegueFromSearchToResults"
+    
+    static let FromResultsToAddDetails = "SegueResultsToAddDetails"
         
   }
   
-
   struct Identifiers {
     
     static let CategorySelectionCell = "CategorySelectionCollectionViewCell"
     
   }
+  
 }

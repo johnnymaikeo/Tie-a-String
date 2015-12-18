@@ -13,7 +13,7 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
   let dataController = DataController()
   var categories: [Categories] = []
   var selectedIndexRow: Int = -1
-  var segueToReturn: String = ""
+  var segueToReturn: String!
   
   override func viewDidLoad() {
     

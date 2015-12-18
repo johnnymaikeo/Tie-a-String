@@ -234,7 +234,7 @@
         <!--Settings-->
         <scene sceneID="mcp-8F-Giw">
             <objects>
-                <viewController title="Settings" id="3Ux-Do-SpL" userLabel="Settings" sceneMemberID="viewController">
+                <viewController title="Settings" id="3Ux-Do-SpL" userLabel="Settings" customClass="SearchViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sp9-GN-dcx"/>
                         <viewControllerLayoutGuide type="bottom" id="Npo-Lp-LJY"/>
@@ -244,11 +244,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="ere-i6-4H2"/>
+                    <navigationItem key="navigationItem" title="Filtrar" id="ere-i6-4H2"/>
+                    <connections>
+                        <segue destination="m8T-XF-mIR" kind="show" identifier="SegueFromSearchToResults" id="4Fq-qN-OHc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bd-h6-4CF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704" y="1814"/>
+        </scene>
+        <!--Results Table View Controller-->
+        <scene sceneID="5IR-d8-aZb">
+            <objects>
+                <tableViewController id="m8T-XF-mIR" customClass="ResultsTableViewController" customModule="Tie_a_String" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VfK-W2-aVp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tL8-gy-oXH">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tL8-gy-oXH" id="YA2-JC-rSL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m8T-XF-mIR" id="d1z-Ph-CkP"/>
+                            <outlet property="delegate" destination="m8T-XF-mIR" id="srU-fg-GNv"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueResultsToAddDetails" id="CXM-SB-UEA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wm3-ex-p6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704" y="2582"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -533,11 +567,11 @@
             </objects>
             <point key="canvasLocation" x="982" y="1034"/>
         </scene>
-        <!--Settings-->
+        <!--Buscar-->
         <scene sceneID="24E-ds-hop">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x8F-sx-CJi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="fYW-7Q-vYy" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" id="fYW-7Q-vYy" userLabel="Settings"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="asF-QF-KAH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -573,7 +607,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="e8G-wX-X67"/>
-        <segue reference="geK-bf-RJO"/>
+        <segue reference="CXM-SB-UEA"/>
         <segue reference="ahR-qd-jer"/>
     </inferredMetricsTieBreakers>
 </document>
