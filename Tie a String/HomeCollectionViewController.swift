@@ -12,16 +12,20 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         
-        super.viewDidLoad()
+      super.viewDidLoad()
         
     }
     
     
     override func viewWillAppear(animated: Bool) {
     
-        // Hide back button from the home screen
+      // show tab bar
+      
+      self.tabBarController?.tabBar.hidden = false
+      
+      // Hide back button from the home screen
     
-        self.navigationItem.setHidesBackButton(true, animated: true)
+      self.navigationItem.setHidesBackButton(true, animated: true)
    
     }
     

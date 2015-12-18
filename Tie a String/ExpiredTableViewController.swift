@@ -28,6 +28,12 @@ class ExpiredTableViewController: UITableViewController {
         
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addButton_TouchUpInside");
     
+    // show tab bar
+    
+    self.tabBarController?.tabBar.hidden = false
+    
+    // refresh data
+    
     self.getData()
     
   }
@@ -73,6 +79,12 @@ class ExpiredTableViewController: UITableViewController {
   // MARK: - Navigation
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // change back button text
+    
+    let backItem = UIBarButtonItem()
+    backItem.title = "Back"
+    navigationItem.backBarButtonItem = backItem
     
     if segue.identifier == Constants.Segues.FromExpiredToSelectCategory {
         
@@ -144,7 +156,9 @@ class ExpiredTableViewController: UITableViewController {
       let alert = item.alert == 1 ? true : false
       let id = Int(item.id!)
       
-      if self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true) {
+      let result = self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true)
+      
+      if result >= 0 {
         
         self.getData()
         

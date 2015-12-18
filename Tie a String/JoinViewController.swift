@@ -17,11 +17,17 @@ class JoinViewController: UIViewController {
         
         self.title = "Join"
     }
+  
+  override func viewWillAppear(animated: Bool) {
+    
+    super.viewWillAppear(animated)
+    
+  }
     
     override func viewWillDisappear(animated: Bool) {
         
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = true
+        //self.navigationController?.navigationBarHidden = true
         
     }
 
@@ -31,8 +37,9 @@ class JoinViewController: UIViewController {
     }
     
     @IBAction func createButton_TouchUpInside(sender: AnyObject) {
-        
-        self.performSegueWithIdentifier(Constants.Segues.FromJoinToHome, sender: self)
+      
+      self.navigationController?.navigationBarHidden = true
+      self.performSegueWithIdentifier(Constants.Segues.FromJoinToHome, sender: self)
         
     }
 

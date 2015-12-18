@@ -21,8 +21,7 @@ class EnterViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
      
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = true
-        
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +40,9 @@ class EnterViewController: UIViewController {
     */
 
     @IBAction func loginButton_TouchUpInside(sender: AnyObject) {
-        
-        self.performSegueWithIdentifier(Constants.Segues.FromEnterToHome, sender: self)
+      
+      self.navigationController?.navigationBarHidden = true
+      self.performSegueWithIdentifier(Constants.Segues.FromEnterToHome, sender: self)
         
     }
 }

@@ -27,6 +27,7 @@
 		EF1D79511C23888400BCA7F5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1D793F1C23888400BCA7F5 /* Icon.png */; };
 		EF1D79521C23888400BCA7F5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1D79401C23888400BCA7F5 /* Icon@2x.png */; };
 		EF1D79531C23888400BCA7F5 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1D79411C23888400BCA7F5 /* iTunesArtwork@2x.png */; };
+		EF1D79561C23BAD500BCA7F5 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D79551C23BAD500BCA7F5 /* ImageController.swift */; };
 		EF64F5A11C17C23600766ECF /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A01C17C23600766ECF /* EnterViewController.swift */; };
 		EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A21C17C25600766ECF /* JoinViewController.swift */; };
 		EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64F5A41C17C26F00766ECF /* LoginViewController.swift */; };
@@ -85,6 +86,7 @@
 		EF1D793F1C23888400BCA7F5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EF1D79401C23888400BCA7F5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EF1D79411C23888400BCA7F5 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		EF1D79551C23BAD500BCA7F5 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		EF64F5A01C17C23600766ECF /* EnterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		EF64F5A21C17C25600766ECF /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		EF64F5A41C17C26F00766ECF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				EFF80E9A1C1FB7D000CE7D4E /* DataController.swift */,
 				EFF80E9C1C1FC2C200CE7D4E /* DataModel.xcdatamodeld */,
+				EF1D79551C23BAD500BCA7F5 /* ImageController.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				EF64F5A71C17C75B00766ECF /* Constants.swift in Sources */,
 				EFB0326A1C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift in Sources */,
 				EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */,
+				EF1D79561C23BAD500BCA7F5 /* ImageController.swift in Sources */,
 				EF64F5A31C17C25600766ECF /* JoinViewController.swift in Sources */,
 				EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */,
 				EFD9C2A21C1510E700E0B7A4 /* AppDelegate.swift in Sources */,

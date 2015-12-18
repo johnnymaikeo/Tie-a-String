@@ -32,6 +32,12 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
     }
+  
+  override func viewWillAppear(animated: Bool) {
+    
+    super.viewWillAppear(animated)
+    
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

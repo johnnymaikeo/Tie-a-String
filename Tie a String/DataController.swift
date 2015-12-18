@@ -116,23 +116,25 @@ class DataController: NSObject {
     
     }
     
-    func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String, active: Bool) -> Bool {
+    func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String, active: Bool) -> Int {
     
         let entity = NSEntityDescription.insertNewObjectForEntityForName("Reminders", inManagedObjectContext: self.managedContext) as! Reminders
+        
+        let id = self.idForReminder()
         
         entity.setValue(alert, forKey: "alert")
         entity.setValue(category, forKey: "category")
         entity.setValue(expiration, forKey: "expiration")
         entity.setValue(self.isExpired(expiration), forKey: "expired")
-        entity.setValue(self.idForReminder(), forKey: "id")
+        entity.setValue(id, forKey: "id")
         entity.setValue(reminder, forKey: "reminder")
         entity.setValue(active, forKey: "active")
         
         do {
             try self.managedContext.save()
-            return true;
+            return id;
         } catch {
-            return false;
+            return -1;
         }
     
     }
@@ -259,7 +261,7 @@ class DataController: NSObject {
         
     }
     
-    func edtReminder(id: Int, alert: Bool, expiration: NSDate, reminder: String, completed: Bool) -> Bool {
+    func edtReminder(id: Int, alert: Bool, expiration: NSDate, reminder: String, completed: Bool) -> Int {
         
         let fetchRequest = NSFetchRequest(entityName: "Reminders")
         
@@ -284,7 +286,7 @@ class DataController: NSObject {
                     
                     try self.managedContext.save()
                     
-                    return true;
+                    return id;
                     
                 } catch {
                     
@@ -301,7 +303,7 @@ class DataController: NSObject {
         
         }
         
-        return false
+        return -1
     }
     
     func deleteReminder(id: Int) -> Bool {

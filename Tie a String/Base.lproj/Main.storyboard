@@ -163,6 +163,16 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-u8-nm0">
                                 <rect key="frame" x="101" y="254" width="51" height="31"/>
                             </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPM-jA-Swo">
+                                <rect key="frame" x="20" y="72" width="149" height="54"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-cT-0sp">
+                                <rect key="frame" x="181" y="84" width="114" height="30"/>
+                                <state key="normal" title="Take a Picture"/>
+                                <connections>
+                                    <action selector="takePicture_TouchUpInside:" destination="Hi4-7X-OiS" eventType="touchUpInside" id="lLp-hm-GR4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -177,6 +187,8 @@
                         <outlet property="descriptionLabel" destination="GL2-o1-ZhL" id="eqV-1h-f1x"/>
                         <outlet property="expirationDateLabel" destination="SFR-qe-vnM" id="Qhc-6T-5mX"/>
                         <outlet property="expirationDatePicker" destination="fNH-uN-dLY" id="YQq-Fz-fqP"/>
+                        <outlet property="image" destination="UPM-jA-Swo" id="H4M-Rg-jmT"/>
+                        <outlet property="takePictureButton" destination="b8d-cT-0sp" id="gjH-em-M8F"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="SegueAddDetailsToTabBarController" id="e8G-wX-X67"/>
                     </connections>
                 </viewController>
@@ -561,7 +573,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="e8G-wX-X67"/>
-        <segue reference="pW3-Ud-GVa"/>
+        <segue reference="geK-bf-RJO"/>
         <segue reference="ahR-qd-jer"/>
     </inferredMetricsTieBreakers>
 </document>

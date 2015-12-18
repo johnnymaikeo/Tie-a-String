@@ -27,6 +27,9 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
     
     // Fetch categories
     self.categories = dataController.fetchCategories()
+    
+    // Hide tab bar on creating/editing reminder
+    self.tabBarController?.tabBar.hidden = true
 
   }
   
@@ -57,6 +60,12 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // change back button text
+    
+    let backItem = UIBarButtonItem()
+    backItem.title = "Back"
+    navigationItem.backBarButtonItem = backItem
     
     if segue.identifier == Constants.Segues.FromSelectCategoryToAddDetails {
       

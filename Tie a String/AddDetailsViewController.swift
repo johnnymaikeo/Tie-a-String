@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddDetailsViewController: UIViewController, UITextFieldDelegate {
+class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
   var categoryIndex: Int = -1
   var category: String = ""
@@ -17,12 +17,16 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
   var action: String = ""
   var reminder: Reminders!
   var dataController = DataController()
+  var imagePicker: UIImagePickerController!
+  let imageController = ImageController()
   
   @IBOutlet weak var descriptionLabel: UITextField!
   @IBOutlet weak var expirationDateLabel: UITextField!
   @IBOutlet weak var alertMeSwitch: UISwitch!
   @IBOutlet weak var activeSwitch: UISwitch!
   @IBOutlet weak var expirationDatePicker: UIDatePicker!
+  @IBOutlet weak var image: UIImageView!
+  @IBOutlet weak var takePictureButton: UIButton!
   
   override func viewDidLoad() {
     
@@ -38,10 +42,24 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
       self.descriptionLabel.text = reminder.reminder
       self.expirationDatePicker.date = reminder.expiration!
       
-      let alert = reminder.alert == 1 ? true : false
-      let active = reminder.active == 1 ? true : false
-      self.alertMeSwitch.setOn(alert, animated: true)
-      self.activeSwitch.setOn(active, animated: true)
+      let alert = reminder.alert?.boolValue
+      let active = reminder.active?.boolValue
+      self.alertMeSwitch.setOn(alert!, animated: true)
+      self.activeSwitch.setOn(active!, animated: true)
+      
+      
+      // Load image if exists
+
+      let id = Int(reminder.id!)
+      if let loadedImage = imageController.loadImageFromPath(self.imagePath(id)) {
+        
+        image.image = loadedImage
+        
+      } else {
+
+        // Load a default image according to category
+        
+      }
     
     } else {
     
@@ -53,6 +71,8 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     
     }
     
+    // Hide tab bar on creating/editing reminder
+    self.tabBarController?.tabBar.hidden = true
     
     // Setting up date piker
     expirationDatePicker.addTarget(self, action: Selector("expirationDatePiker_Changed:"), forControlEvents: UIControlEvents.ValueChanged)
@@ -81,8 +101,13 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     let id = Int(self.reminder.id!)
     let active = self.activeSwitch.on
     
-    if self.dataController.edtReminder(id, alert: alert, expiration: expiration, reminder: reminder!, completed: active) {
+    let result = self.dataController.edtReminder(id, alert: alert, expiration: expiration, reminder: reminder!, completed: active)
+    
+    if  result >= 0{
+      
+      savePicture(id)
       self.performSegueWithIdentifier(Constants.Segues.FromAddDetailsToTabBar, sender: self)
+      
     } else {
       // Show alert on error
     }
@@ -96,8 +121,13 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     let alert = self.alertMeSwitch.on
     let active = self.activeSwitch.on
     
-    if self.dataController.addReminder(alert, category: self.categoryIndex, expiration: expiration, reminder: reminder!, active: active) {
+    let result = self.dataController.addReminder(alert, category: self.categoryIndex, expiration: expiration, reminder: reminder!, active: active)
+    
+    if result >= 0 {
+      
+      savePicture(result)
       self.performSegueWithIdentifier(Constants.Segues.FromAddDetailsToTabBar, sender: self)
+      
     } else {
       // Show alert on error
     }
@@ -127,6 +157,48 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate {
     
     self.view.endEditing(true)
     return false
+    
+  }
+  
+  // MARK: - take picture
+  
+  @IBAction func takePicture_TouchUpInside(sender: AnyObject) {
+    imagePicker =  UIImagePickerController()
+    imagePicker.delegate = self
+    imagePicker.sourceType = .Camera
+    
+    presentViewController(imagePicker, animated: true, completion: nil)
+  }
+  
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    
+    imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    image.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    
+  }
+  
+  func imagePath (reminder: Int) -> String {
+    
+    // Define the specific path, image name
+    
+    let myImageName = "img" + String(reminder) +  ".png"
+    let imagePath = imageController.fileInDocumentsDirectory(myImageName)
+    
+    return imagePath
+    
+  }
+  
+  func savePicture (reminder: Int) {
+    
+    if let image = image.image {
+      
+      imageController.saveImage(image, path: self.imagePath(reminder))
+      
+    } else {
+      
+      // Cold not save date error
+      
+    }
     
   }
   

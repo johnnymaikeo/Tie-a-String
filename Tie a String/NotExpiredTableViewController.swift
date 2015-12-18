@@ -21,6 +21,7 @@ class NotExpiredTableViewController: UITableViewController {
     super.viewDidLoad()
     
     self.categories = self.dataController.fetchCategories()
+    
         
   }
     
@@ -30,6 +31,10 @@ class NotExpiredTableViewController: UITableViewController {
     
     self.reminders = self.dataController.fetchNonExpiredReminders()
     self.convertReminderArrayToMatrix()
+    
+    // show tab bar
+    
+    self.tabBarController?.tabBar.hidden = false
     
     // refresh table view data
     
@@ -77,6 +82,12 @@ class NotExpiredTableViewController: UITableViewController {
   // MARK: - Navigation
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // Change back button text
+    
+    let backItem = UIBarButtonItem()
+    backItem.title = "Back"
+    navigationItem.backBarButtonItem = backItem
     
     if segue.identifier == Constants.Segues.FromNotExpiredToSelectCategory {
       
@@ -148,7 +159,9 @@ class NotExpiredTableViewController: UITableViewController {
       let alert = item.alert == 1 ? true : false
       let id = Int(item.id!)
       
-      if self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true) {
+      let result = self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true)
+      
+      if result >= 0 {
 
         self.getData()
 
