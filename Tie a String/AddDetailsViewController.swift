@@ -32,9 +32,17 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
     
     super.viewDidLoad()
     
+    // show default image
+    
+    self.image.image = UIImage(named: category)
+    
+    // set page title
+    
+    self.title = "Lembrete"
+    
     if action == "Edit" {
     
-      self.title = "Edit Details"
+      
       
       navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "editButton_TouchUpInside")
       
@@ -55,17 +63,10 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
         
         image.image = loadedImage
         
-      } else {
-
-        // Load a default image according to category
-        
       }
+      
     
     } else {
-    
-      // Set page title
-      
-      self.title = "Add Details"
       
       navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveButton_TouchUpInside")
     
@@ -149,8 +150,7 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
   func expirationDatePiker_Changed(datePicker:UIDatePicker) {
     let dateFormatter = NSDateFormatter()
     
-    dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-    dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
     
     let strDate = dateFormatter.stringFromDate(datePicker.date)
     expirationDateLabel.text = strDate

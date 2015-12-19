@@ -22,6 +22,10 @@ class NotExpiredTableViewController: UITableViewController {
     
     self.categories = self.dataController.fetchCategories()
     
+    // Registering custom collection view cell
+    
+    tableView!.registerNib(UINib(nibName: Constants.Identifiers.ReminderTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.ReminderTableViewCell)
+    
         
   }
     
@@ -128,15 +132,35 @@ class NotExpiredTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-    let cell = tableView.dequeueReusableCellWithIdentifier("NonExpiredCell",
-    forIndexPath: indexPath)
+    let cell = self.tableView.dequeueReusableCellWithIdentifier(Constants.Identifiers.ReminderTableViewCell, forIndexPath: indexPath) as! ReminderTableViewCell
     
     let reminder = self.reminderMatrix[indexPath.section][indexPath.row] as! Reminders
-    cell.textLabel!.text = reminder.reminder
+    
+    cell.reminderLabel.text = reminder.reminder
+    
+    let id = Int(reminder.id!)
+    let imageController = ImageController()
+    
+    if let loadedImage = imageController.loadImageFromPath(imageController.imagePath(id)) {
+      
+      cell.reminderImage.image = loadedImage
+      
+    } else {
+      
+      cell.reminderImage.image = UIImage(named: reminder.reminder!)
+      
+    }
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+    
     return cell
     
   }
   
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 100
+  }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     

@@ -50,6 +50,23 @@
 		EFD9C2AE1C1510E700E0B7A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFD9C2AC1C1510E700E0B7A4 /* LaunchScreen.xib */; };
 		EFD9C2BA1C1510E700E0B7A4 /* Tie_a_StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2B91C1510E700E0B7A4 /* Tie_a_StringTests.swift */; };
 		EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */; };
+		EFDB23891C2602DF00FC2242 /* Automóvel.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237A1C2602DF00FC2242 /* Automóvel.png */; };
+		EFDB238A1C2602DF00FC2242 /* Documentos.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237B1C2602DF00FC2242 /* Documentos.png */; };
+		EFDB238B1C2602DF00FC2242 /* expired@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237C1C2602DF00FC2242 /* expired@2x.png */; };
+		EFDB238C1C2602DF00FC2242 /* expired@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237D1C2602DF00FC2242 /* expired@3x.png */; };
+		EFDB238D1C2602DF00FC2242 /* Alimentos.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237E1C2602DF00FC2242 /* Alimentos.png */; };
+		EFDB238E1C2602DF00FC2242 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB237F1C2602DF00FC2242 /* hand.png */; };
+		EFDB238F1C2602DF00FC2242 /* Saúde.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23801C2602DF00FC2242 /* Saúde.png */; };
+		EFDB23901C2602DF00FC2242 /* Residência.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23811C2602DF00FC2242 /* Residência.png */; };
+		EFDB23911C2602DF00FC2242 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23821C2602DF00FC2242 /* home@2x.png */; };
+		EFDB23921C2602DF00FC2242 /* home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23831C2602DF00FC2242 /* home@3x.png */; };
+		EFDB23931C2602DF00FC2242 /* Financeiro.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23841C2602DF00FC2242 /* Financeiro.png */; };
+		EFDB23941C2602DF00FC2242 /* not-expired@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23851C2602DF00FC2242 /* not-expired@2x.png */; };
+		EFDB23951C2602DF00FC2242 /* not-expired@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23861C2602DF00FC2242 /* not-expired@3x.png */; };
+		EFDB23961C2602DF00FC2242 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23871C2602DF00FC2242 /* search@2x.png */; };
+		EFDB23971C2602DF00FC2242 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23881C2602DF00FC2242 /* search@3x.png */; };
+		EFDB23991C26115F00FC2242 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDB23981C26115F00FC2242 /* ReminderTableViewCell.xib */; };
+		EFDB239B1C26127600FC2242 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB239A1C26127600FC2242 /* ReminderTableViewCell.swift */; };
 		EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3261C1E4CAF00A6C942 /* NotExpiredTableViewController.swift */; };
 		EFF3A3291C1E4CC800A6C942 /* ExpiredTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */; };
 		EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */; };
@@ -118,6 +135,23 @@
 		EFD9C2B81C1510E700E0B7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD9C2B91C1510E700E0B7A4 /* Tie_a_StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tie_a_StringTests.swift; sourceTree = "<group>"; };
 		EFD9C2CA1C15283E00E0B7A4 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		EFDB237A1C2602DF00FC2242 /* Automóvel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Automóvel.png"; sourceTree = "<group>"; };
+		EFDB237B1C2602DF00FC2242 /* Documentos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Documentos.png; sourceTree = "<group>"; };
+		EFDB237C1C2602DF00FC2242 /* expired@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expired@2x.png"; sourceTree = "<group>"; };
+		EFDB237D1C2602DF00FC2242 /* expired@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expired@3x.png"; sourceTree = "<group>"; };
+		EFDB237E1C2602DF00FC2242 /* Alimentos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alimentos.png; sourceTree = "<group>"; };
+		EFDB237F1C2602DF00FC2242 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		EFDB23801C2602DF00FC2242 /* Saúde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saúde.png"; sourceTree = "<group>"; };
+		EFDB23811C2602DF00FC2242 /* Residência.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Residência.png"; sourceTree = "<group>"; };
+		EFDB23821C2602DF00FC2242 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		EFDB23831C2602DF00FC2242 /* home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@3x.png"; sourceTree = "<group>"; };
+		EFDB23841C2602DF00FC2242 /* Financeiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Financeiro.png; sourceTree = "<group>"; };
+		EFDB23851C2602DF00FC2242 /* not-expired@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not-expired@2x.png"; sourceTree = "<group>"; };
+		EFDB23861C2602DF00FC2242 /* not-expired@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not-expired@3x.png"; sourceTree = "<group>"; };
+		EFDB23871C2602DF00FC2242 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		EFDB23881C2602DF00FC2242 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		EFDB23981C26115F00FC2242 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
+		EFDB239A1C26127600FC2242 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		EFF3A3261C1E4CAF00A6C942 /* NotExpiredTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotExpiredTableViewController.swift; sourceTree = "<group>"; };
 		EFF3A3281C1E4CC800A6C942 /* ExpiredTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTableViewController.swift; sourceTree = "<group>"; };
 		EFF3A32C1C1E4EFC00A6C942 /* AddDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailsViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +183,21 @@
 		EF1D792A1C23886000BCA7F5 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				EFDB237A1C2602DF00FC2242 /* Automóvel.png */,
+				EFDB237B1C2602DF00FC2242 /* Documentos.png */,
+				EFDB237C1C2602DF00FC2242 /* expired@2x.png */,
+				EFDB237D1C2602DF00FC2242 /* expired@3x.png */,
+				EFDB237E1C2602DF00FC2242 /* Alimentos.png */,
+				EFDB237F1C2602DF00FC2242 /* hand.png */,
+				EFDB23801C2602DF00FC2242 /* Saúde.png */,
+				EFDB23811C2602DF00FC2242 /* Residência.png */,
+				EFDB23821C2602DF00FC2242 /* home@2x.png */,
+				EFDB23831C2602DF00FC2242 /* home@3x.png */,
+				EFDB23841C2602DF00FC2242 /* Financeiro.png */,
+				EFDB23851C2602DF00FC2242 /* not-expired@2x.png */,
+				EFDB23861C2602DF00FC2242 /* not-expired@3x.png */,
+				EFDB23871C2602DF00FC2242 /* search@2x.png */,
+				EFDB23881C2602DF00FC2242 /* search@3x.png */,
 				EF1D79301C23888400BCA7F5 /* Icon-60.png */,
 				EF1D79311C23888400BCA7F5 /* Icon-60@2x.png */,
 				EF1D79321C23888400BCA7F5 /* Icon-60@3x.png */,
@@ -197,6 +246,8 @@
 			children = (
 				EFB032671C20E8210005E860 /* CategorySelectionCollectionViewCell.xib */,
 				EFB032691C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift */,
+				EFDB23981C26115F00FC2242 /* ReminderTableViewCell.xib */,
+				EFDB239A1C26127600FC2242 /* ReminderTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -388,29 +439,45 @@
 			files = (
 				EF1D79501C23888400BCA7F5 /* Icon-Small@3x.png in Resources */,
 				EF1D79521C23888400BCA7F5 /* Icon@2x.png in Resources */,
+				EFDB23921C2602DF00FC2242 /* home@3x.png in Resources */,
 				EFB032681C20E8210005E860 /* CategorySelectionCollectionViewCell.xib in Resources */,
+				EFDB23941C2602DF00FC2242 /* not-expired@2x.png in Resources */,
 				EF1D794A1C23888400BCA7F5 /* Icon-Small-40@2x.png in Resources */,
 				EF1D79471C23888400BCA7F5 /* Icon-76.png in Resources */,
+				EFDB23911C2602DF00FC2242 /* home@2x.png in Resources */,
+				EFDB23961C2602DF00FC2242 /* search@2x.png in Resources */,
+				EFDB238C1C2602DF00FC2242 /* expired@3x.png in Resources */,
+				EFDB23901C2602DF00FC2242 /* Residência.png in Resources */,
+				EFDB23991C26115F00FC2242 /* ReminderTableViewCell.xib in Resources */,
+				EFDB23931C2602DF00FC2242 /* Financeiro.png in Resources */,
 				EF1D794C1C23888400BCA7F5 /* Icon-Small-50.png in Resources */,
 				EF04A1EB1C251F3F00918ACA /* login-picture.jpg in Resources */,
 				EF1D792E1C23887900BCA7F5 /* splash@2x.jpg in Resources */,
 				EF1D79461C23888400BCA7F5 /* Icon-72@2x.png in Resources */,
+				EFDB238B1C2602DF00FC2242 /* expired@2x.png in Resources */,
 				EF1D794F1C23888400BCA7F5 /* Icon-Small@2x.png in Resources */,
 				EF1D79481C23888400BCA7F5 /* Icon-76@2x.png in Resources */,
 				EF1D79511C23888400BCA7F5 /* Icon.png in Resources */,
+				EFDB23891C2602DF00FC2242 /* Automóvel.png in Resources */,
 				EF1D79531C23888400BCA7F5 /* iTunesArtwork@2x.png in Resources */,
 				EF1D794B1C23888400BCA7F5 /* Icon-Small-40@3x.png in Resources */,
+				EFDB23971C2602DF00FC2242 /* search@3x.png in Resources */,
 				EF1D794E1C23888400BCA7F5 /* Icon-Small.png in Resources */,
+				EFDB23951C2602DF00FC2242 /* not-expired@3x.png in Resources */,
 				EF1D794D1C23888400BCA7F5 /* Icon-Small-50@2x.png in Resources */,
 				EF1D79421C23888400BCA7F5 /* Icon-60.png in Resources */,
+				EFDB238A1C2602DF00FC2242 /* Documentos.png in Resources */,
 				EF1D79451C23888400BCA7F5 /* Icon-72.png in Resources */,
+				EFDB238E1C2602DF00FC2242 /* hand.png in Resources */,
 				EF1D792F1C23887900BCA7F5 /* splash@3x.jpg in Resources */,
 				EFD9C2A91C1510E700E0B7A4 /* Main.storyboard in Resources */,
 				EF1D79431C23888400BCA7F5 /* Icon-60@2x.png in Resources */,
 				EF1D79441C23888400BCA7F5 /* Icon-60@3x.png in Resources */,
 				EFD9C2AE1C1510E700E0B7A4 /* LaunchScreen.xib in Resources */,
+				EFDB238F1C2602DF00FC2242 /* Saúde.png in Resources */,
 				EF1D79491C23888400BCA7F5 /* Icon-Small-40.png in Resources */,
 				EFD9C2AB1C1510E700E0B7A4 /* Images.xcassets in Resources */,
+				EFDB238D1C2602DF00FC2242 /* Alimentos.png in Resources */,
 				EF7719C11C167432006D0AC5 /* img.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +505,7 @@
 				EFF80EA21C1FC2F900CE7D4E /* Categories.swift in Sources */,
 				EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */,
 				EFF3A32D1C1E4EFC00A6C942 /* AddDetailsViewController.swift in Sources */,
+				EFDB239B1C26127600FC2242 /* ReminderTableViewCell.swift in Sources */,
 				EFF80E9E1C1FC2C200CE7D4E /* DataModel.xcdatamodeld in Sources */,
 				EFF80EA11C1FC2F900CE7D4E /* Categories+CoreDataProperties.swift in Sources */,
 				EFF3A32F1C1E56B100A6C942 /* SelectCategoryCollectionViewController.swift in Sources */,

@@ -31,7 +31,7 @@
                             <outlet property="delegate" destination="BdF-7t-sdm" id="Ijl-A1-lUz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Not Expired" id="VtE-6p-SXu"/>
+                    <navigationItem key="navigationItem" title="Em Dia" id="VtE-6p-SXu"/>
                     <connections>
                         <segue destination="757-jA-sOt" kind="show" identifier="SegueNotExpiredToSelectCaregory" id="ahR-qd-jer"/>
                         <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueNotExpiredToAddDetails" id="myk-lF-OmH"/>
@@ -64,7 +64,7 @@
                             <outlet property="delegate" destination="zGr-Ca-amO" id="gZF-pi-ZQ7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expired" id="30L-wY-vyE"/>
+                    <navigationItem key="navigationItem" title="Vencidos" id="30L-wY-vyE"/>
                     <connections>
                         <segue destination="757-jA-sOt" kind="show" identifier="SegueExpiredToSelectCaregory" id="9s5-kF-uNz"/>
                         <segue destination="Hi4-7X-OiS" kind="show" identifier="SegueExpiredToAddDetails" id="pW3-Ud-GVa"/>
@@ -132,8 +132,8 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvu-Cs-evI">
                                 <rect key="frame" x="531" y="219" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Receber Alertas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hd-3D-W8q">
-                                <rect key="frame" x="20" y="219" width="142" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receber Alertas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hd-3D-W8q">
+                                <rect key="frame" x="20" y="219" width="123" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -144,19 +144,19 @@
                                     <!--2015-12-16 02:01:13 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vencimento em" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTl-8A-QMB">
-                                <rect key="frame" x="20" y="258" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vencimento em" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTl-8A-QMB">
+                                <rect key="frame" x="20" y="258" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-qe-vnM">
-                                <rect key="frame" x="149" y="258" width="431" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFR-qe-vnM">
+                                <rect key="frame" x="147" y="258" width="433" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ativo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn2-mP-YPj">
-                                <rect key="frame" x="20" y="306" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ativo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn2-mP-YPj">
+                                <rect key="frame" x="20" y="306" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -164,17 +164,19 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-u8-nm0">
                                 <rect key="frame" x="531" y="296" width="51" height="31"/>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-cT-0sp">
-                                <rect key="frame" x="252" y="144" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-cT-0sp">
+                                <rect key="frame" x="267" y="230" width="67" height="30"/>
                                 <state key="normal" title="Tirar Foto"/>
                                 <connections>
                                     <action selector="takePicture_TouchUpInside:" destination="Hi4-7X-OiS" eventType="touchUpInside" id="lLp-hm-GR4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPM-jA-Swo">
-                                <rect key="frame" x="268" y="72" width="64" height="64"/>
+                                <rect key="frame" x="225" y="72" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UPM-jA-Swo" secondAttribute="height" multiplier="1:1" id="ZDb-jD-zbx"/>
+                                    <constraint firstAttribute="width" constant="150" id="lbh-HG-4WP"/>
+                                    <constraint firstAttribute="height" constant="150" id="mie-Xt-uEx"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -199,7 +201,6 @@
                             <constraint firstItem="UPM-jA-Swo" firstAttribute="centerX" secondItem="AH3-Bb-K9n" secondAttribute="centerX" id="hIy-67-3ka"/>
                             <constraint firstItem="SFR-qe-vnM" firstAttribute="trailing" secondItem="AH3-Bb-K9n" secondAttribute="trailingMargin" id="isN-94-feg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fNH-uN-dLY" secondAttribute="trailing" constant="-20" id="iyl-dX-AaE"/>
-                            <constraint firstItem="GL2-o1-ZhL" firstAttribute="top" secondItem="b8d-cT-0sp" secondAttribute="bottom" constant="8" id="ju1-cE-lKA"/>
                             <constraint firstItem="9hd-3D-W8q" firstAttribute="leading" secondItem="AH3-Bb-K9n" secondAttribute="leadingMargin" id="mTB-0g-mer"/>
                             <constraint firstItem="SFR-qe-vnM" firstAttribute="leading" secondItem="MTl-8A-QMB" secondAttribute="trailing" constant="8" id="oCS-83-63W"/>
                             <constraint firstItem="9hd-3D-W8q" firstAttribute="top" secondItem="GL2-o1-ZhL" secondAttribute="bottom" constant="7" id="oOw-uZ-EDz"/>
@@ -392,7 +393,7 @@
                             <constraint firstItem="Npo-Lp-LJY" firstAttribute="top" secondItem="OWs-Gu-zIv" secondAttribute="bottom" id="yyj-EJ-0mB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Filtrar" id="ere-i6-4H2"/>
+                    <navigationItem key="navigationItem" title="Buscar" id="ere-i6-4H2"/>
                     <connections>
                         <outlet property="categoryListPicker" destination="HbL-8L-qC7" id="bzK-5a-i8K"/>
                         <outlet property="categoryTextBox" destination="uE7-YC-tFR" id="2o6-Gh-PlS"/>
@@ -765,7 +766,7 @@
         <scene sceneID="cGw-IG-gB6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zkl-5C-py8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="1bT-ms-QGA" userLabel="Home"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="1bT-ms-QGA" userLabel="Home"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ewr-bD-ftW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -780,11 +781,11 @@
             </objects>
             <point key="canvasLocation" x="-362" y="1034"/>
         </scene>
-        <!--Not Expired-->
+        <!--Em Dia-->
         <scene sceneID="yBQ-pN-LJL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KOI-pF-JET" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Not Expired" id="RJz-cq-ydh" userLabel="Not Expired"/>
+                    <tabBarItem key="tabBarItem" title="Em Dia" image="not-expired.png" id="RJz-cq-ydh" userLabel="Not Expired"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ojx-kP-kPZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -799,11 +800,11 @@
             </objects>
             <point key="canvasLocation" x="306" y="1034"/>
         </scene>
-        <!--Expired-->
+        <!--Vencidos-->
         <scene sceneID="1J4-g3-bAx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pwX-2n-IJ8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Expired" id="RpV-yr-LSx" userLabel="Expired"/>
+                    <tabBarItem key="tabBarItem" title="Vencidos" image="expired.png" id="RpV-yr-LSx" userLabel="Expired"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0w1-qw-FHu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -822,7 +823,7 @@
         <scene sceneID="24E-ds-hop">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x8F-sx-CJi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Buscar" id="fYW-7Q-vYy" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="search.png" id="fYW-7Q-vYy" userLabel="Settings"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="asF-QF-KAH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -857,11 +858,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="expired.png" width="25" height="25"/>
+        <image name="home.png" width="25" height="25"/>
         <image name="login-picture.jpg" width="1242" height="1104"/>
+        <image name="not-expired.png" width="25" height="25"/>
+        <image name="search.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="e8G-wX-X67"/>
         <segue reference="geK-bf-RJO"/>
-        <segue reference="9s5-kF-uNz"/>
+        <segue reference="ahR-qd-jer"/>
     </inferredMetricsTieBreakers>
 </document>

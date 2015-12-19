@@ -42,6 +42,8 @@ struct Constants {
     
     static let CategorySelectionCell = "CategorySelectionCollectionViewCell"
     
+    static let ReminderTableViewCell = "ReminderTableViewCell"
+    
     static let AppName = "Tie a String"
   }
   

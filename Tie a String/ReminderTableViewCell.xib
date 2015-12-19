@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="JQd-qb-ZfA" customClass="ReminderTableViewCell" customModule="Tie_a_String" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JQd-qb-ZfA" id="naf-iJ-Ana">
+                <rect key="frame" x="0.0" y="0.0" width="384" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUb-xt-bup">
+                        <rect key="frame" x="97" y="8" width="48" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.19215686269999999" green="0.56470588239999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-PV-5e5">
+                        <rect key="frame" x="8" y="8" width="81" height="81"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="81" id="2E6-6n-Ac1"/>
+                            <constraint firstAttribute="width" constant="81" id="Cjg-7H-GIv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Vencimento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-Sl-rat">
+                        <rect key="frame" x="97" y="40" width="81" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEE-Ip-gby">
+                        <rect key="frame" x="186" y="40" width="190" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nUb-xt-bup" firstAttribute="leading" secondItem="uW4-PV-5e5" secondAttribute="trailing" constant="8" id="1yO-HE-oou"/>
+                    <constraint firstItem="uW4-PV-5e5" firstAttribute="leading" secondItem="naf-iJ-Ana" secondAttribute="leadingMargin" id="38W-30-2Wd"/>
+                    <constraint firstItem="b0Y-Sl-rat" firstAttribute="centerY" secondItem="naf-iJ-Ana" secondAttribute="centerY" id="Bd3-uh-KPu"/>
+                    <constraint firstItem="b0Y-Sl-rat" firstAttribute="leading" secondItem="uW4-PV-5e5" secondAttribute="trailing" constant="8" id="UfL-1w-Io8"/>
+                    <constraint firstItem="uW4-PV-5e5" firstAttribute="bottom" secondItem="naf-iJ-Ana" secondAttribute="bottomMargin" id="Zua-cJ-13r"/>
+                    <constraint firstItem="fEE-Ip-gby" firstAttribute="trailing" secondItem="naf-iJ-Ana" secondAttribute="trailingMargin" id="bzQ-X7-eb7"/>
+                    <constraint firstItem="fEE-Ip-gby" firstAttribute="centerY" secondItem="naf-iJ-Ana" secondAttribute="centerY" id="c7x-wO-wa9"/>
+                    <constraint firstItem="nUb-xt-bup" firstAttribute="top" secondItem="naf-iJ-Ana" secondAttribute="topMargin" id="lq6-U4-oIS"/>
+                    <constraint firstItem="uW4-PV-5e5" firstAttribute="top" secondItem="naf-iJ-Ana" secondAttribute="topMargin" id="ru7-YV-Pt4"/>
+                    <constraint firstItem="fEE-Ip-gby" firstAttribute="leading" secondItem="b0Y-Sl-rat" secondAttribute="trailing" constant="8" id="z4v-xq-kyz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="expireDateLabel" destination="fEE-Ip-gby" id="DRQ-OM-7yQ"/>
+                <outlet property="reminderImage" destination="uW4-PV-5e5" id="QFw-x4-sqU"/>
+                <outlet property="reminderLabel" destination="nUb-xt-bup" id="D2L-td-YDJ"/>
+            </connections>
+            <point key="canvasLocation" x="244" y="221"/>
+        </tableViewCell>
+    </objects>
+</document>

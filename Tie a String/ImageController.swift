@@ -52,4 +52,15 @@ class ImageController: NSObject {
     
   }
   
+  func imagePath (reminder: Int) -> String {
+    
+    // Define the specific path, image name
+    
+    let myImageName = "img" + String(reminder) +  ".png"
+    let imagePath = self.fileInDocumentsDirectory(myImageName)
+    
+    return imagePath
+    
+  }
+  
 }

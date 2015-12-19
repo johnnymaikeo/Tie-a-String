@@ -21,12 +21,15 @@ class ResultsTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Registering custom collection view cell
+    
+    tableView!.registerNib(UINib(nibName: Constants.Identifiers.ReminderTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.ReminderTableViewCell)
 
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    // Set page title
+    
+    self.title = "Resultado"
+    
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -72,13 +75,35 @@ class ResultsTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCellWithIdentifier("ResultCell",
-      forIndexPath: indexPath)
+    let cell = self.tableView.dequeueReusableCellWithIdentifier(Constants.Identifiers.ReminderTableViewCell, forIndexPath: indexPath) as! ReminderTableViewCell
     
-    let reminder = self.reminders[indexPath.row]
-    cell.textLabel!.text = reminder.reminder
+    let reminder = self.reminders[indexPath.row] 
+    
+    cell.reminderLabel.text = reminder.reminder
+    
+    let id = Int(reminder.id!)
+    let imageController = ImageController()
+    
+    if let loadedImage = imageController.loadImageFromPath(imageController.imagePath(id)) {
+      
+      cell.reminderImage.image = loadedImage
+      
+    } else {
+      
+      cell.reminderImage.image = UIImage(named: reminder.reminder!)
+      
+    }
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+    cell.expireDateLabel.text = dateFormatter.stringFromDate(reminder.expiration!)
+    
     return cell
     
+  }
+  
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 100
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

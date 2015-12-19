@@ -20,7 +20,7 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
     super.viewDidLoad()
         
     // Set page title
-    self.title = "Category Selection"
+    self.title = "Selecione a Categoria"
 
     // Registering custom collection view cell
     collectionView!.registerNib(UINib(nibName: Constants.Identifiers.CategorySelectionCell, bundle: nil), forCellWithReuseIdentifier: Constants.Identifiers.CategorySelectionCell)
@@ -46,7 +46,10 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
     
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.Identifiers.CategorySelectionCell, forIndexPath: indexPath) as! CategorySelectionCollectionViewCell
     
-    cell.categoryLabel.text = self.categories[indexPath.row].name
+    let category = self.categories[indexPath.row].name
+    
+    cell.categoryLabel.text = category
+    cell.image.image = UIImage(named: category!)
     
     return cell
   }
@@ -57,6 +60,14 @@ class SelectCategoryCollectionViewController: UICollectionViewController {
   
     self.performSegueWithIdentifier(Constants.Segues.FromSelectCategoryToAddDetails, sender: self)
     
+  }
+  
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    
+    let width = collectionView.bounds.size.width / 2 - 5
+    let height = width + 20
+    
+    return CGSizeMake(width, height)
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
