@@ -21,8 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let pageController = UIPageControl.appearance();
         pageController.pageIndicatorTintColor = UIColor.lightGrayColor();
-        pageController.currentPageIndicatorTintColor = UIColor.blackColor();
-        pageController.backgroundColor = UIColor.whiteColor();
+        pageController.currentPageIndicatorTintColor = UIColor.whiteColor();
+        pageController.backgroundColor = UIColor.init(red: 0, green: 170, blue: 231, alpha: 0)
+      
+        // Set status bar color
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+      
+        // Change navigation bar color
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 170.0/255.0, blue: 231.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         // Check if user have seen the welcome message
         // Redirect to WelcomeViewController if not

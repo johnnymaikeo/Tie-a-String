@@ -28,11 +28,7 @@ class HomeCollectionViewController: UICollectionViewController {
     // Hide back button from the home screen
     
     self.navigationItem.setHidesBackButton(true, animated: true)
-      
-    // Navigate
-    if (tabToReturn != nil) {
-      NSLog("segueToReturn: %@", self.tabToReturn)
-    }
+    
   }
     
 }

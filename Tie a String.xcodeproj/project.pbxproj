@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF04A1E81C2505BC00918ACA /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04A1E61C2505BC00918ACA /* Users+CoreDataProperties.swift */; };
+		EF04A1E91C2505BC00918ACA /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04A1E71C2505BC00918ACA /* Users.swift */; };
+		EF04A1EB1C251F3F00918ACA /* login-picture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF04A1EA1C251F3F00918ACA /* login-picture.jpg */; };
 		EF1D792E1C23887900BCA7F5 /* splash@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF1D792C1C23887900BCA7F5 /* splash@2x.jpg */; };
 		EF1D792F1C23887900BCA7F5 /* splash@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF1D792D1C23887900BCA7F5 /* splash@3x.jpg */; };
 		EF1D79421C23888400BCA7F5 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1D79301C23888400BCA7F5 /* Icon-60.png */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF04A1E61C2505BC00918ACA /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EF04A1E71C2505BC00918ACA /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		EF04A1EA1C251F3F00918ACA /* login-picture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "login-picture.jpg"; sourceTree = "<group>"; };
 		EF1D792C1C23887900BCA7F5 /* splash@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splash@2x.jpg"; sourceTree = "<group>"; };
 		EF1D792D1C23887900BCA7F5 /* splash@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splash@3x.jpg"; sourceTree = "<group>"; };
 		EF1D79301C23888400BCA7F5 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 				EF1D792B1C23886800BCA7F5 /* splash */,
 				EF1D792A1C23886000BCA7F5 /* icons */,
 				EF7719C01C167432006D0AC5 /* img.JPG */,
+				EF04A1EA1C251F3F00918ACA /* login-picture.jpg */,
 				EF64F5A61C17C75B00766ECF /* Constants.swift */,
 			);
 			name = Assets;
@@ -290,6 +297,8 @@
 				EFF80EA01C1FC2F900CE7D4E /* Categories.swift */,
 				EF833B791C22696000735786 /* Reminders+CoreDataProperties.swift */,
 				EF833B7A1C22696000735786 /* Reminders.swift */,
+				EF04A1E61C2505BC00918ACA /* Users+CoreDataProperties.swift */,
+				EF04A1E71C2505BC00918ACA /* Users.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				EF1D794A1C23888400BCA7F5 /* Icon-Small-40@2x.png in Resources */,
 				EF1D79471C23888400BCA7F5 /* Icon-76.png in Resources */,
 				EF1D794C1C23888400BCA7F5 /* Icon-Small-50.png in Resources */,
+				EF04A1EB1C251F3F00918ACA /* login-picture.jpg in Resources */,
 				EF1D792E1C23887900BCA7F5 /* splash@2x.jpg in Resources */,
 				EF1D79461C23888400BCA7F5 /* Icon-72@2x.png in Resources */,
 				EF1D794F1C23888400BCA7F5 /* Icon-Small@2x.png in Resources */,
@@ -423,6 +433,7 @@
 				EF64F5A51C17C26F00766ECF /* LoginViewController.swift in Sources */,
 				EFF80E9B1C1FB7D000CE7D4E /* DataController.swift in Sources */,
 				EFF3A3271C1E4CAF00A6C942 /* NotExpiredTableViewController.swift in Sources */,
+				EF04A1E81C2505BC00918ACA /* Users+CoreDataProperties.swift in Sources */,
 				EF1D795B1C23CB9300BCA7F5 /* ResultsTableViewController.swift in Sources */,
 				EFF80EA21C1FC2F900CE7D4E /* Categories.swift in Sources */,
 				EF7719BE1C166F2B006D0AC5 /* WelcomeViewController.swift in Sources */,
@@ -434,6 +445,7 @@
 				EFD9C2CB1C15283E00E0B7A4 /* PageContentViewController.swift in Sources */,
 				EF64F5A71C17C75B00766ECF /* Constants.swift in Sources */,
 				EFB0326A1C20E8D60005E860 /* CategorySelectionCollectionViewCell.swift in Sources */,
+				EF04A1E91C2505BC00918ACA /* Users.swift in Sources */,
 				EF64F5A91C17C97400766ECF /* HomeCollectionViewController.swift in Sources */,
 				EF1D79591C23CB4000BCA7F5 /* SearchViewController.swift in Sources */,
 				EF1D79561C23BAD500BCA7F5 /* ImageController.swift in Sources */,

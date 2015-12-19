@@ -106,7 +106,7 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
     if  result >= 0{
       
       savePicture(id)
-      self.performSegueWithIdentifier(Constants.Segues.FromAddDetailsToTabBar, sender: self)
+      navigationController?.popViewControllerAnimated(true)
       
     } else {
       // Show alert on error
@@ -143,24 +143,6 @@ class AddDetailsViewController: UIViewController, UITextFieldDelegate, UINavigat
     // Hide navigation bar before returning to tab controller
     
     self.navigationController?.navigationBarHidden = true
-    
-    if segue.identifier == Constants.Segues.FromAddDetailsToTabBar {
-      
-      let tabBarController = segue.destinationViewController as! UITabBarController
-      
-      if self.segueToReturn == Constants.Segues.FromAddDetailsToNotExpired {
-      
-        let navigationController = tabBarController.viewControllers?[1] as! UINavigationController
-        _ = navigationController.viewControllers[0] as! NotExpiredTableViewController
-        
-      } else {
-      
-        let navigationController = tabBarController.viewControllers?[2] as! UINavigationController
-        _ = navigationController.viewControllers[0] as! ExpiredTableViewController
-      
-      }
-      
-    }
     
   }
 

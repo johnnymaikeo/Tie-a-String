@@ -19,6 +19,8 @@ class DataController: NSObject {
         self.managedContext = self.appDelegate.managedObjectContext
     }
     
+    // MARK: - Categories
+    
     func seedCategories() {
         
         // Check if core data is already populated
@@ -101,8 +103,143 @@ class DataController: NSObject {
         
     }
     
-    internal func idForReminder() -> Int {
+
     
+    // MARK: - Users
+    
+    func idForUser() -> Int {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Users")
+        
+        do {
+        
+            let results = try self.managedContext.executeFetchRequest(fetchRequest)
+            return results.count
+            
+        } catch {
+        
+            fatalError("Failure to fetch \(error)")
+        
+        }
+    
+    }
+    
+    func addUser(name: String, email: String, password: String) -> Int {
+    
+        let entity = NSEntityDescription.insertNewObjectForEntityForName("Users", inManagedObjectContext: self.managedContext) as! Users
+        
+        let id = self.idForUser()
+        
+        entity.setValue(name, forKey: "name")
+        entity.setValue(email, forKey: "email")
+        entity.setValue(password, forKey: "password")
+        
+        entity.setValue(expirationDate(), forKey: "expiration")
+        
+        let token = "TOKEN"
+        
+        entity.setValue(token, forKey: "token")
+        
+        do {
+        
+            try self.managedContext.save()
+            return id;
+        
+        } catch {
+        
+            return -1
+        
+        }
+    
+    }
+    
+    func fetchUser(name: String, password: String) -> Users! {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Users")
+        
+        // Filter user by name and password
+        
+        let predicate = NSPredicate(format: "name = %@ AND password = %@", name, password)
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+        
+            let result = try self.managedContext.executeFetchRequest(fetchRequest)
+            
+            if result.count == 0 {
+            
+                return nil
+                
+            } else {
+            
+                return result[0] as! Users
+            
+            }
+            
+        } catch {
+        
+            fatalError("Failure to fetch \(error)")
+        
+        }
+        
+    }
+    
+    internal func expirationDate() -> NSDate {
+    
+        let now = NSDate()
+        let daysToExpire: Int = 30
+        let expirationDate = now.dateByAddingTimeInterval(Double(60 * 60 * 24 * daysToExpire))
+        
+        return expirationDate
+    
+    }
+    
+    func updateUserLoginData(name: String) -> Bool {
+    
+        let fetchRequest = NSFetchRequest(entityName: "Users")
+        
+        // FIlter user by name
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+        
+            let results = try self.managedContext.executeFetchRequest(fetchRequest)
+            
+            for user in results {
+            
+                user.setValue(expirationDate(), forKey: "expiration")
+                
+                do {
+                
+                    try self.managedContext.save()
+                    return true
+                    
+                } catch {
+                
+                    fatalError("Failure to save: \(error)")
+                
+                }
+            
+            }
+        
+        } catch {
+        
+            fatalError("Failed to fetch \(error)")
+        
+        }
+        
+        return false;
+    
+    }
+    
+    // MARK: - Reminders
+    
+    internal func idForReminder() -> Int {
+        
         let fetchRequest = NSFetchRequest(entityName: "Reminders")
         
         do {
@@ -113,7 +250,7 @@ class DataController: NSObject {
         } catch {
             fatalError("Failure to fech \(error)")
         }
-    
+        
     }
     
     func addReminder(alert: Bool, category: Int, expiration: NSDate, reminder: String, active: Bool) -> Int {
@@ -259,6 +396,73 @@ class DataController: NSObject {
         
         return []
         
+    }
+    
+    func fetchFilteredReminders(startDate: NSDate!, var endDate: NSDate!, category: Int!, keyword: String!) -> [Reminders] {
+        
+        
+        var predicates: [NSPredicate] = []
+        let fetchRequest = NSFetchRequest(entityName: "Reminders")
+        
+        // Filter request by date
+        
+        if startDate != nil {
+        
+            if endDate == nil {
+            
+                // Set today as end date if nil
+                endDate = NSDate()
+                
+            }
+            
+            let predicateBetweenDates = NSPredicate(format: "expiration >= %@ AND expiration <= %@", startDate, endDate)
+            predicates.append(predicateBetweenDates)
+        
+        }
+        
+        // Filter request by category
+        
+        if category != nil {
+        
+            let predicateByCategory = NSPredicate(format: "category = %d", category)
+            predicates.append(predicateByCategory)
+        
+        }
+        
+        // Filter request by keywork
+        
+        if keyword != nil {
+        
+            let predicateByKeyword = NSPredicate(format: "reminder like '%@'", keyword)
+            predicates.append(predicateByKeyword)
+        
+        }
+        
+        let compound = NSCompoundPredicate(type: .AndPredicateType, subpredicates: predicates)
+        
+        
+        fetchRequest.predicate = compound
+        
+        // sort results by expiration date
+        
+        let sortDescriptor = NSSortDescriptor(key: "expiration", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        do {
+            
+            let results = try self.managedContext.executeFetchRequest(fetchRequest) as! [Reminders]
+            return results
+            
+        } catch {
+            
+            fatalError("Failure to fetch: \(error)")
+            
+        }
+        
+        return []
+    
     }
     
     func edtReminder(id: Int, alert: Bool, expiration: NSDate, reminder: String, completed: Bool) -> Int {

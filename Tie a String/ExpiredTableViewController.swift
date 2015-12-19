@@ -147,6 +147,8 @@ class ExpiredTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
 
+    self.selectedReminder = self.reminderMatrix[indexPath.section][indexPath.row] as! Reminders
+    
     let completed = UITableViewRowAction(style: .Normal, title: "Completo") { action, index in
     
       let item = self.reminderMatrix[indexPath.section][indexPath.row] as! Reminders

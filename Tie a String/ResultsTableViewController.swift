@@ -10,86 +10,168 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  var startDate: NSDate!
+  var endDate: NSDate!
+  var category: Int!
+  var keyword: String!
+  
+  let dataController = DataController()
+  var reminders: [Reminders]!
+  var selectedReminder: Reminders!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    
+    super.viewWillAppear(true)
+    
+    // Show tab bar on creating/editing reminder
+    self.tabBarController?.tabBar.hidden = false
+    
+    getData()
+    
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+
+  func getData() {
+  
+    self.reminders = dataController.fetchFilteredReminders(self.startDate, endDate: self.endDate, category: self.category, keyword: self.keyword)
+    
+    self.tableView.reloadData()
+  
+  }
+  
+  
+  // MARK: - Table view data source
+  
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    // Return the number of sections.
+    return 1
+    
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    // Return the number of rows in the section.
+    return self.reminders.count
+    
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    let cell = tableView.dequeueReusableCellWithIdentifier("ResultCell",
+      forIndexPath: indexPath)
+    
+    let reminder = self.reminders[indexPath.row]
+    cell.textLabel!.text = reminder.reminder
+    return cell
+    
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    // Go to Details View Controller with Edit option
+    
+    self.selectedReminder = self.reminders[indexPath.row] 
+    
+    performSegueWithIdentifier(Constants.Segues.FromResultsToAddDetails, sender: self)
+    
+  }
+  
+  override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    
+    self.selectedReminder = self.reminders[indexPath.row] 
+    
+    let completed = UITableViewRowAction(style: .Normal, title: "Completo") { action, index in
+      
+      let item = self.reminders[indexPath.row]
+      
+      let reminder = item.reminder
+      let expiration = item.expiration
+      let alert = item.alert == 1 ? true : false
+      let id = Int(item.id!)
+      
+      let result = self.dataController.edtReminder(id, alert: alert, expiration: expiration!, reminder: reminder!, completed: true)
+      
+      if result >= 0 {
+        
+        self.getData()
+        
+      } else {
+        // Show alert on error
+      }
+      
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    completed.backgroundColor = UIColor.lightGrayColor()
+    
+    let edit = UITableViewRowAction(style: .Normal, title: "Editar") { action, index in
+      
+      self.performSegueWithIdentifier(Constants.Segues.FromResultsToAddDetails, sender: self)
+      
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    edit.backgroundColor = UIColor.blueColor()
+    
+    let delete = UITableViewRowAction(style: .Normal, title: "Remover") { action, index in
+      
+      let item = self.reminders[indexPath.row]
+      let index = Int(item.id!)
+      
+      if self.dataController.deleteReminder(index) {
+        
+        self.getData()
+        
+      } else {
+        
+        // Show alert on error
+        
+      }
+      
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    delete.backgroundColor = UIColor.redColor()
+    
+    return [completed, edit, delete]
+  }
+  
+  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // the cells you would like the actions to appear needs to be editable
+    return true
+  }
+  
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    // you need to implement this method too or you can't swipe to display the actions
+  }
+  
+  // MARK: - Navigation
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    // change back button text
+    
+    let backItem = UIBarButtonItem()
+    backItem.title = "Back"
+    navigationItem.backBarButtonItem = backItem
+    
+    if segue.identifier == Constants.Segues.FromResultsToAddDetails {
+      
+      let viewController = segue.destinationViewController as! AddDetailsViewController
+      
+      viewController.segueToReturn = Constants.Segues.FromResultsToAddDetails
+      viewController.action = "Edit"
+      viewController.reminder = self.selectedReminder
+      
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
 }

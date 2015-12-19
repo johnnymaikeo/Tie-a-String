@@ -9,40 +9,84 @@
 import UIKit
 
 class EnterViewController: UIViewController {
+  
+  @IBOutlet weak var nameTextBox: UITextField!
+  @IBOutlet weak var passwordTextBox: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var messageLabel: UILabel!
+  
+  
+  let dataController = DataController()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+  
+    super.viewDidLoad()
 
-        // Set page title
+    // Set page title
         
-        self.title = "Login"
+    self.title = "Entrar"
+    
+  }
+    
+  override func viewWillDisappear(animated: Bool) {
+     
+    super.viewWillDisappear(animated)
+      
+  }
+
+  override func didReceiveMemoryWarning() {
+  
+    super.didReceiveMemoryWarning()
+      
+  }
+
+  @IBAction func loginButton_TouchUpInside(sender: AnyObject) {
+    
+    if validateForm() {
+    
+      let user = dataController.fetchUser(nameTextBox.text!, password: passwordTextBox.text!)
+      
+      if user != nil {
+        
+        if user.name == nameTextBox.text && user.password == passwordTextBox.text {
+        
+          // Set last login data on core data
+          _ = dataController.updateUserLoginData(user.name!)
+          
+          // Set user on NSDefaults
+          let defaults = NSUserDefaults.standardUserDefaults();
+          defaults.setValue(true, forKey: "showWelcomeMessage");
+          
+          self.navigationController?.navigationBarHidden = true
+          self.performSegueWithIdentifier(Constants.Segues.FromEnterToHome, sender: self)
+        
+        } else {
+        
+          messageLabel.text = "Usuário ou senha incorretos"
+        
+        }
+      
+      } else {
+      
+        messageLabel.text = "Usuário ou senha incorretos"
+      
+      }
+    
+    }
+        
+  }
+  
+  internal func validateForm() -> Bool {
+  
+    if nameTextBox.text == "" || passwordTextBox.text == "" {
+    
+      messageLabel.text = "Preencha todos os campos para prosseguir"
+      return false;
+      
     }
     
-    override func viewWillDisappear(animated: Bool) {
-     
-        super.viewWillDisappear(animated)
-      
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBAction func loginButton_TouchUpInside(sender: AnyObject) {
-      
-      self.navigationController?.navigationBarHidden = true
-      self.performSegueWithIdentifier(Constants.Segues.FromEnterToHome, sender: self)
-        
-    }
+    return true
+  
+  }
+  
 }

@@ -114,9 +114,9 @@ class WelcomeViewController: UIViewController, UIPageViewControllerDataSource {
         // Change button from skip to start if last picture is hit
 
         if (index >= self.pageImages.count - 1) {
-            self.skipButton.setTitle("start", forState: UIControlState.Normal)
+            self.skipButton.setTitle("Começar", forState: UIControlState.Normal)
         } else {
-            self.skipButton.setTitle("skip", forState: UIControlState.Normal)
+            self.skipButton.setTitle("Pular Introdução", forState: UIControlState.Normal)
         }
         
     }

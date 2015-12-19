@@ -42,6 +42,7 @@ struct Constants {
     
     static let CategorySelectionCell = "CategorySelectionCollectionViewCell"
     
+    static let AppName = "Tie a String"
   }
   
 }
